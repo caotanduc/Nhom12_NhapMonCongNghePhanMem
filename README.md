@@ -19,13 +19,21 @@ Danh sách thành viên
 
 ## Cấu trúc cây thư mục
 GITREPO
+
 ├───docs
+
 │   ├───analysis and design
+
 │   ├───management
+
 │   ├───requirements
+
 │   └───testing
+
 ├───pa
+
 └───src
+
 
 Trong đó:
 - src: chứa mã nguồn
