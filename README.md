@@ -22,13 +22,13 @@ Danh sách thành viên
 ## Cấu trúc cây thư mục
 ```bash
 .
+├───src
 ├───docs
 │   ├───analysis and design
 │   ├───management
 │   ├───requirements
 │   └───testing
-├───pa
-└───src
+└───pa
 ```
 
 
