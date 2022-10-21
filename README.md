@@ -1,11 +1,13 @@
-# Nhập môn Công nghệ Phần Mềm
+# Nhập môn Công nghệ Phần Mềm - Nhóm 12
 ---
 
 ## Thông tin môn học
+
 Giáo viên lý thuyết:
+
 Giáo viên Thực hành:
 
-Số thứ tự nhóm: 12
+
 Nhóm trưởng: 20120239 - Thái Mai Khánh Vy - 20120239@student.hcmus.edu.vn
 
 Danh sách thành viên
@@ -18,21 +20,16 @@ Danh sách thành viên
 |20120288|Nguyễn Trung Hiếu|20120288@student.hcmus.edu.vn|
 
 ## Cấu trúc cây thư mục
-GITREPO
-
+```bash
+.
 ├───docs
-
 │   ├───analysis and design
-
 │   ├───management
-
 │   ├───requirements
-
 │   └───testing
-
 ├───pa
-
 └───src
+```
 
 
 Trong đó:
