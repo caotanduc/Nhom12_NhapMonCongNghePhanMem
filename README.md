@@ -3,9 +3,9 @@
 
 ## Thông tin môn học
 
-Giáo viên lý thuyết: **Nguyễn Văn Vũ**
+Giáo viên lý thuyết: Thầy **Nguyễn Văn Vũ**
 
-Giáo viên Thực hành:
+Giáo viên Thực hành: Thầy **Trương Phước Lộc**
 
 
 Nhóm trưởng: **20120239 - Thái Mai Khánh Vy**
