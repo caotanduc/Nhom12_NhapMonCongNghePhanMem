@@ -1,0 +1,3122 @@
+.register-container {
+  width: 1920px;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.register-register-page {
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+.register-rectangle12 {
+  top: 70px;
+  left: 0px;
+  width: 275px;
+  height: 1010px;
+  position: absolute;
+  border-color: transparent;
+}
+.register-rectangle28 {
+  top: 1px;
+  left: 0px;
+  width: 1920px;
+  height: 70px;
+  position: absolute;
+  border-color: transparent;
+}
+.register-home-about-us-logout {
+  top: var(--dl-space-space-unit);
+  right: 25px;
+  width: 508px;
+  height: var(--dl-size-size-small);
+  display: flex;
+  position: absolute;
+  align-items: right;
+  border-color: transparent;
+}
+.register-home-about-us {
+  width: auto;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+}
+.register-home {
+  display: flex;
+  padding: 12px 24px;
+  position: relative;
+  align-self: center;
+  align-items: flex-start;
+  border-color: transparent;
+  margin-right: 0px;
+  border-radius: 4px;
+}
+.register-text {
+  color: rgba(80, 80, 80, 1);
+  height: auto;
+  font-size: 25px;
+  align-self: auto;
+  font-style: Semi Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-about-us {
+  display: flex;
+  padding: 12px 24px;
+  position: relative;
+  align-self: center;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 4px;
+}
+.register-text002 {
+  color: rgba(80, 80, 80, 1);
+  height: auto;
+  font-size: 26px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-log-out {
+  top: -1px;
+  right: 0px;
+  width: 170px;
+  height: var(--dl-size-size-small);
+  display: flex;
+  position: absolute;
+  box-sizing: content-box;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  padding-left: 0px;
+  border-radius: 4px;
+  padding-right: 0px;
+  background-color: rgba(255, 255, 255, 0.7900000214576721);
+}
+.register-text004 {
+  color: rgba(39, 39, 39, 1);
+  width: 100%;
+  height: auto;
+  font-size: 30px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: var(--dl-space-space-unit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-unit);
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-header {
+  top: 0px;
+  left: 0px;
+  width: 1161px;
+  height: 71px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.register-d-k-h-p {
+  top: 1px;
+  left: 569px;
+  width: 297px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.register-rectangle29 {
+  top: 0px;
+  left: 0px;
+  width: 297px;
+  height: 70px;
+  position: absolute;
+  border-color: transparent;
+}
+.register-text006 {
+  top: 18px;
+  left: 33px;
+  color: rgba(94, 94, 94, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-profile {
+  top: 0px;
+  left: 0px;
+  width: 275px;
+  height: 68px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(205, 224, 255, 0);
+}
+.register-text008 {
+  top: 19px;
+  left: 19px;
+  color: rgba(94, 94, 94, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-d-s-l-m {
+  top: 1px;
+  left: 275px;
+  width: 294px;
+  height: 70px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(205, 224, 255, 0);
+}
+.register-text010 {
+  top: 18px;
+  left: 27px;
+  color: rgba(94, 94, 94, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-t-d-h-p {
+  top: 1px;
+  left: 867px;
+  width: 294px;
+  height: 70px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(205, 224, 255, 0);
+}
+.register-text012 {
+  top: 18px;
+  left: 29px;
+  color: rgba(94, 94, 94, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-line1 {
+  top: var(--dl-space-space-unit);
+  left: 569px;
+  width: auto;
+  height: auto;
+  position: absolute;
+}
+.register-line3 {
+  top: var(--dl-space-space-unit);
+  left: 275px;
+  width: auto;
+  height: auto;
+  position: absolute;
+}
+.register-line2 {
+  top: var(--dl-space-space-unit);
+  left: 866px;
+  width: auto;
+  height: auto;
+  position: absolute;
+}
+.register-l-l-s-d-k {
+  top: 261px;
+  left: 0px;
+  width: 275px;
+  height: 72px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0);
+}
+.register-text014 {
+  top: 16px;
+  left: 39px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-l-k-q-d-k {
+  top: 189px;
+  left: 0px;
+  width: 275px;
+  height: 72px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.register-line6 {
+  left: 0px;
+  width: 275px;
+  bottom: 0px;
+  height: 5px;
+  position: absolute;
+}
+.register-text016 {
+  top: 18px;
+  left: 34px;
+  color: rgb(0, 0, 0);
+  width: auto;
+  bottom: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: center;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-line4 {
+  width: 275px;
+  height: 5px;
+}
+.register-l-d-k-h-p {
+  top: 119px;
+  left: 0px;
+  width: 275px;
+  height: 72px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+.register-text017 {
+  top: 16px;
+  left: 21px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-rectangle40 {
+  top: 167px;
+  left: 296px;
+  width: 1610px;
+  height: 422px;
+  position: absolute;
+  border-color: rgba(0, 101, 255, 1);
+  border-style: solid;
+  border-width: 2px;
+}
+.register-row {
+  top: 189px;
+  left: 299px;
+  width: 1604px;
+  height: 96px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(139, 138, 152, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(240, 244, 248, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox-hover {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-n-a-m-e {
+  width: 120px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+}
+.register-header1 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  padding-top: 0px;
+  border-color: transparent;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+.register-frame9 {
+  width: 123px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.register-text019 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-header2icons {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content {
+  top: 8px;
+  left: 0px;
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 10px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text024 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons {
+  top: 20px;
+  right: 0px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.register-header2icons01 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+}
+.register-cell-content01 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext01 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text029 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons01 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons02 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content02 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext02 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text031 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons02 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons03 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content03 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext03 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text033 {
+  color: rgb(0, 101, 255);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons03 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons04 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content04 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext04 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text034 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons04 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons05 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content05 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext05 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text036 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons05 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons06 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content06 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext06 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text038 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons06 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons07 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content07 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext07 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text040 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons07 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons08 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  justify-content: center;
+}
+.register-cell-content08 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext08 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text042 {
+  color: rgba(0, 101, 255, 1);
+  width: 111px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons08 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-row1 {
+  top: 285px;
+  left: 299px;
+  width: 1604px;
+  height: 96px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(205, 204, 221, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-rectangle3 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-color: rgba(127, 173, 224, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.register-cell-content09 {
+  width: 120px;
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-bodytext09 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text044 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content10 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext10 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text046 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content11 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext11 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text048 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content12 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext12 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text050 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content13 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext13 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text051 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content14 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext14 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text053 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content15 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext15 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text055 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content16 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext16 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text057 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content17 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext17 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text059 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content18 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext18 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text060 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-row2 {
+  top: 381px;
+  left: 299px;
+  width: 1604px;
+  height: 96px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(205, 204, 221, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox1 {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-rectangle31 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-color: rgba(127, 173, 224, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.register-cell-content19 {
+  width: 120px;
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-bodytext19 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text062 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content20 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext20 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text064 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content21 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext21 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text066 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content22 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext22 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text068 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content23 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext23 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text069 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content24 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext24 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text071 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content25 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext25 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text073 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content26 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext26 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text075 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content27 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext27 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text077 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content28 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext28 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text078 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-group13 {
+  top: 602px;
+  left: 1683px;
+  width: 157px;
+  height: 53px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 219, 164, 1);
+}
+.register-text080 {
+  top: 10px;
+  left: 30px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 28px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-group14 {
+  top: 1003px;
+  left: 1683px;
+  width: 157px;
+  height: 53px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 219, 164, 1);
+}
+.register-text082 {
+  top: 10px;
+  left: 33px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 28px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-rectangle401 {
+  top: 144px;
+  left: 890px;
+  width: 421px;
+  height: 46px;
+  position: absolute;
+  border-color: transparent;
+  border-radius: 10px;
+}
+.register-text084 {
+  top: 146px;
+  left: 900px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-rectangle402 {
+  top: 691px;
+  left: 296px;
+  width: 1607px;
+  height: 296px;
+  position: absolute;
+  border-color: rgba(0, 101, 255, 1);
+  border-style: solid;
+  border-width: 2px;
+}
+.register-rectangle41 {
+  top: 671px;
+  left: 874px;
+  width: 447px;
+  height: 46px;
+  position: absolute;
+  border-color: transparent;
+  border-radius: 10px;
+}
+.register-text086 {
+  top: 673px;
+  left: 900px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-row3 {
+  top: 717px;
+  left: 299px;
+  width: 1601px;
+  height: 63px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(139, 138, 152, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(240, 244, 248, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox-hover1 {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-n-a-m-e1 {
+  width: 120px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+}
+.register-header2 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  padding-top: 0px;
+  border-color: transparent;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+.register-frame91 {
+  width: 100%;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.register-text088 {
+  color: rgba(0, 101, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-text093 {
+  color: rgba(0, 101, 255, 1);
+  width: 264px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons09 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  margin-right: 0px;
+}
+.register-header2icons09 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+}
+.register-cell-content29 {
+  width: auto;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext29 {
+  width: 105px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.register-text095 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons10 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons10 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content30 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext30 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text097 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons11 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons11 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content31 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext31 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text099 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons12 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons12 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-cell-content32 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext32 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text101 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons13 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-header2icons13 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  justify-content: center;
+}
+.register-cell-content33 {
+  width: 125px;
+  height: 49px;
+  display: flex;
+  padding: 16px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext33 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text103 {
+  color: rgba(0, 101, 255, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 600;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-icons14 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.register-row4 {
+  top: 779px;
+  left: 298px;
+  width: 1601px;
+  height: 63px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(205, 204, 221, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox2 {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-rectangle32 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-color: rgba(127, 173, 224, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.register-cell-content34 {
+  width: 120px;
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-bodytext34 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text108 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-container1 {
+  width: var(--dl-size-size-xxlarge);
+  display: flex;
+  align-items: center;
+}
+.register-text110 {
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content35 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext35 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text112 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content36 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext36 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text114 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content37 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext37 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text115 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content38 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext38 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text116 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content39 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext39 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text118 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-row5 {
+  top: 845px;
+  left: 299px;
+  width: 1601px;
+  height: 63px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(205, 204, 221, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox3 {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-rectangle33 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-color: rgba(127, 173, 224, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.register-cell-content40 {
+  width: 120px;
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-bodytext40 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text119 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-container2 {
+  width: var(--dl-size-size-xxlarge);
+  display: flex;
+  align-items: center;
+}
+.register-text121 {
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content41 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext41 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text123 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content42 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext42 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text125 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content43 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext43 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text126 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content44 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext44 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text127 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content45 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext45 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text129 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-row6 {
+  top: 908px;
+  left: 299px;
+  width: 1601px;
+  height: 63px;
+  display: flex;
+  padding: 16px 0;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(205, 204, 221, 1);
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-width: 1px;
+}
+.register-checkbox4 {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  padding: 0 8px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-rectangle34 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-color: rgba(127, 173, 224, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.register-cell-content46 {
+  width: 120px;
+  display: flex;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+  justify-content: center;
+}
+.register-bodytext46 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text130 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-container3 {
+  width: var(--dl-size-size-xxlarge);
+  display: flex;
+  align-items: center;
+}
+.register-text132 {
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: Cabin;
+  font-weight: 500;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content47 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext47 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text134 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content48 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext48 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text136 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content49 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext49 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text137 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content50 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+  margin-right: 0px;
+}
+.register-bodytext50 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text138 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-cell-content51 {
+  width: var(--dl-size-size-large);
+  display: flex;
+  padding: 0px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(189, 189, 189, 1);
+  border-style: solid;
+  border-width: Symbol(figma.mixed)px;
+}
+.register-bodytext51 {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+}
+.register-text140 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: center;
+  font-family: Cabin;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-rectangle291 {
+  top: 71px;
+  left: 0px;
+  width: 1920px;
+  height: 48px;
+  position: absolute;
+  border-color: transparent;
+}
