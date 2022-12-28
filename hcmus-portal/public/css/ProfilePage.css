@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+.bg-secondary {
+  background-color: #f1f1f1!important;
+}
+
+.bg-primary {
+  background-color: #cde0ff !important;
+}
+
+.avatar {
+  display: block;
+  width: 40%;
+  max-width: 300px;
+  margin-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.8rem;
+}
+
+.MSSV {
+  color: black;
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 0.1rem;
+}
+
+.StName {
+  color: black;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  margin-bottom: 2.3rem;
+}
+
+.split-line {
+  height: 3px;
+  margin: 0px 1.5rem 5.3rem 1.5rem;
+  color: #0066ff;
+  background-color: #0066ff;
+}
+
+.info-title {
+  color: black;
+  font-family: "Cabin", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  margin-left: 5%;
+}
+
+.info {
+  color: black;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+.info-container {
+  margin: 0 auto;
+}
+
+.row .col-3 {
+  max-width: 800px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.row .col-9 {
+  max-width: 3000px;
+}
+
+/* Schedule grid and heading*/
+@media screen and (min-width: 850px) {
+  .schedule-heading {
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-top: 3rem;
+  }
+  .schedule {
+    margin: 0 2rem;
+    display: grid;
+    grid-gap: 0.75rem;
+    grid-template-rows:
+      [tracks] auto
+      [time-0730] 1fr
+      [time-0830] 1fr
+      [time-0920] 1fr
+      [time-1020] 1fr
+      [time-1110] 1fr
+      [time-1230] 1fr
+      [time-1320] 1fr
+      [time-1420] 1fr
+      [time-1510] 1fr
+      [time-1610] 1fr;
+
+    grid-template-columns:
+      [times] 13rem
+      [track-1-start] 1fr
+      [track-1-end track-2-start] 1fr
+      [track-2-end track-3-start] 1fr
+      [track-3-end track-4-start] 1fr
+      [track-4-end track-5-start] 1fr
+      [track-5-end track-6-start] 1fr
+      [track-6-end];
+  }
+  .time-slot {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+.time-slot {
+  grid-column: times;
+}
+
+.track-slot1,
+.track-slot2,
+.track-slot3,
+.track-slot4,
+.track-slot5,
+.track-slot6 {
+  display: none; /* hidden on small screens and browsers without grid support */
+}
+
+@media screen and (min-width: 850px) {
+  @supports (display: grid) { /* Width >= 850px and support grid */
+    .track-slot1 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #0d99ff;
+    }
+    .track-slot2 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #9987ff;
+    }
+    .track-slot3 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #14ae5c;
+    }
+    .track-slot4 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ff7575;
+    }
+    .track-slot5 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffd248;
+    }
+    .track-slot6 {
+      margin: 1rem 1rem !important;
+      text-align: center;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: white;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #cd8f65;
+    }
+    .track-slot-empty {
+      margin:1rem 0 !important;
+      display: block;
+      top: 0;
+      z-index: 1000;
+      border-radius: 4px;
+      border: 4px solid #000000;
+    }
+  }
+}
+
+/* Small-screen & fallback styles */
+.schedule-heading {
+  width: 100%;
+  text-align: center;
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-top: 2rem;
+}
+
+.session {
+  overflow: hidden;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 2px;
+  font-size: 1.4rem;
+}
+
+.session-time,
+.session-room {
+  display: block;
+  font-family: "Cabin";
+  font-weight: 400;
+  font-size: 2rem;
+  color: black;
+}
+
+.session-title,
+.time-slot {
+  margin: 0;
+}
+
+.session-title {
+  display: block;
+  font-family: "Cabin";
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.track-1 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #c1efff;
+  color: black;
+}
+
+.track-2 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #cdc3ff;
+  color: black;
+}
+
+.track-3 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #b6e2a1;
+  color: black;
+}
+
+.track-4 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #ffb3b3;
+  color: black;
+}
+
+.track-5 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #ffdba4;
+  color: black;
+}
+
+.track-6 {
+  margin: 0.5rem 1rem !important;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #d0b8a8;
+  color: black;
+}
+
+.track-bg {
+  margin-top: 0.3rem !important;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border-style: dashed;
+  display: flex;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: 850px) {
+    .session {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .time-slot {
+    display: none;
+  }
+  .track-bg {
+    display: none;
+  }
+}
+
+body {
+  height: calc(100vh - 7rem) !important;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+}
+
+
+
+@media screen and (min-width: 2400px) { /*~2k and up*/
+  html {
+      font-size: 80% !important;
+    }
+  }
+
+  @media screen and (max-width: 2399px) { /*~fullhd 1920x1080 to ~2k*/
+    html {
+      font-size: 62.5% !important;
+    }
+  }
+
+  @media screen and (max-width: 1699px) { /* < fullHD 1920x1080*/
+    html {
+      font-size: 52% !important;
+    }
+  }
+  
+  @media screen and (max-width: 900px) { 
+    html {
+      font-size: 45% !important;
+    }
+  }
+
+  @media screen and (max-width: 899px) { 
+    html {
+      font-size: 38% !important;
+    }
+  }
+
+  @media screen and (max-width: 600px) { /* small screen*/
+  html {
+      font-size: 35% !important;
+    }
+  }

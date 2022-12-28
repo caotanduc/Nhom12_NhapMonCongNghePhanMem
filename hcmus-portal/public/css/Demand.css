@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+
+.left-demand {
+    background-color: white;
+}
+
+.list-group-item-action:hover {
+    color: black !important;
+    background-color: white !important;
+}
+
+.left-exchange {
+    border: none !important;
+}
+
+.list-group-item{
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    padding: 1rem 0 !important;
+    text-align: center;
+    color: black !important;
+    border-top: 1px solid #0066FF;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 3rem;
+    margin-right: 3.6rem;
+}
+
+.btn-register {
+    position: block;
+    vertical-align: bottom;
+    float: right;
+    margin-top: 1rem;
+    margin-right: 5rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 3rem;
+    padding: 1rem 3rem;
+    color: black;
+    border: none;
+    background-color: #FFDBA4;
+    border-radius: 2px;
+}
+
+.pane {
+    min-height: calc(100vh - 11.8rem);
+    padding: 0 !important;
+}
+
+.table-label1 {
+    position: absolute;
+    margin-top: -4rem;
+    left: 45vw;
+    font-weight: 700;
+    font-size: 3rem;
+    background-color: white;
+    padding: 0 3rem;
+}
+
+.table-label2 {
+    position: absolute;
+    margin-top: -4rem;
+    left: 48vw;
+    font-weight: 700;
+    font-size: 3rem;
+    background-color: white;
+    padding: 0 3rem;
+}
+
+.table-demand {
+    padding-top: 2rem; 
+    border: 2px solid #0066FF;
+}
+
+th {
+    position: sticky;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: #0066FF;
+}
+
+td {
+    padding: 1rem 0 !important;
+}
+
+tr {
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.bg-secondary {
+    background-color: #F1F1F1 !important;
+}
+
+.bg-primary {
+    background-color: #CDE0FF !important;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    height: 100vh;
+}
+
+@media screen and (min-width: 2400px) {
+
+    /*~2k and up*/
+    html {
+        font-size: 80% !important;
+    }
+}
+
+@media screen and (max-width: 2399px) {
+
+    /*~fullhd 1920x1080 to ~2k*/
+    html {
+        font-size: 62.5% !important;
+    }
+}
+
+@media screen and (max-width: 1699px) {
+
+    /* < fullHD 1920x1080*/
+    html {
+        font-size: 52% !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 45% !important;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    html {
+        font-size: 38% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    /* small screen*/
+    html {
+        font-size: 35% !important;
+    }
+}

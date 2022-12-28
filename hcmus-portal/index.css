@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./public/img/BG_Login_Forgot.png");
+  min-height: 100%;
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.container{
+  position: absolute;
+  Top: 50%;
+  Left: 50%;
+  Transform: translate( -50%, -50%);
+  background-image: url("./public/img/img_Login3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 406px;
+  height: 651px;
+}
+.container img{
+  position: absolute;
+  width: 274px;
+  height: 268px;
+  top:-5%;
+  left:90%;
+}
+.man img{
+  position: absolute;
+  width: 233px;
+  height: 281px;
+  top:61%;
+  left:-40%;
+}
+
+.error {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  font-weight: 700;
+  font-size: 18px;
+  color: red;
+}
+
+.container form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .user_field{
+  position: relative;
+  background: #C4DAFD;
+  height: 43px;
+  margin-top: 380px;
+  border-radius: 7px;
+}
+
+.user_field i{
+  margin-top: 10px;
+  margin-left: 15px;
+  color: #FFFFFF;
+  font-size:1.4rem;
+  
+}
+.user_field input{
+  display: block;
+  width: 85%;
+  margin-left: 10px;
+  height: 40px;
+  transform: translate(12%,-80%);
+  font-size: 18px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.user_field label{
+  position: absolute;
+  left: 0px;
+  color: #000000;
+  font-weight: 500;
+  transform: translateY(-130%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.user_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+
+.pass_field{
+  position: relative;
+  background: #C4DAFD;
+  height: 43px;
+  margin-top: 40px;
+  border-radius: 7px;
+}
+.pass_field i{
+  margin-top: 10px;
+  margin-left: 15px;
+  color: #FFFFFF;
+  font-size:1.4rem;
+  
+}
+.pass_field input{
+  display: block;
+  width: 85%;
+  margin-left: 10px;
+  height: 40px;
+  transform: translate(12%,-80%);
+  font-size: 18px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.pass_field label{
+  position: absolute;
+  left: 0px;
+  color: #000000;
+  font-weight: 500;
+  transform: translateY(-130%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.pass_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+
+
+.inputBox {
+  margin: 40px 0;
+  
+  
+}
+.inputBox a{
+  color: #273E74;
+  font-size: 16px;
+  color: #2691d9;
+  text-decoration: none;
+}
+.inputBox a:hover{
+  text-decoration: underline;
+}
+.inputBox input[type="submit"]{
+  width: 105px;
+  height: 35px;
+  background: #FFDBA4;
+  transform: translateX(110%);
+  font-size: 18px;
+  color: #000000;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
