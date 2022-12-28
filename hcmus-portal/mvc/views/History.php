@@ -17,41 +17,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <?php
-    echo '<style>.nav-item.register{ background-color: #cde0ff !important; }</style>';
-    include "./NavBar.html"; 
-  ?> 
+  echo '<style>.nav-item.register{ background-color: #cde0ff !important; }</style>';
+  include "./NavBar.html";
+  ?>
   <link rel="stylesheet" href="../../public/css/History.css" />
 </head>
 
 <body>
   <!-- Filter bar -->
   <nav class="navbar navbar-expand-sm bg-primary navbar-light filter-bar">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item bg-primary">
-                <span class="navtext label">Năm học:</span>
-            </li>
-            <li class="nav-item bg-primary">
-                <select class="form-select nav-namhoc" >
-                    <option value="2022-2023">2022-2023</option>
-                    <option value="2021-2022">2021-2022</option>
-                    <option value="2020-2021">2020-2021</option>
-                </select>
-            </li>
-            <li class="nav-item bg-primary">
-                <span class="navtext label">Học kì:</span>
-            </li>
-            <li class="nav-item bg-primary">
-                <select class="form-select nav-hk" >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </li>
-            <li class="nav-item bg-primary">
-                <button type="button" class="btn nav-item-button">Xem
-                </button>
-            </li>
-        </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item bg-primary">
+        <span class="navtext label">Năm học:</span>
+      </li>
+      <li class="nav-item bg-primary">
+        <select class="form-select nav-namhoc">
+          <option value="2022-2023">2022-2023</option>
+          <option value="2021-2022">2021-2022</option>
+          <option value="2020-2021">2020-2021</option>
+        </select>
+      </li>
+      <li class="nav-item bg-primary">
+        <span class="navtext label">Học kì:</span>
+      </li>
+      <li class="nav-item bg-primary">
+        <select class="form-select nav-hk">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </li>
+      <li class="nav-item bg-primary">
+        <button type="button" class="btn nav-item-button">Xem
+        </button>
+      </li>
+    </ul>
   </nav>
   <div class="container-fluid" style="padding: 0 !important">
     <div class="row h-100" style="margin: 0!important">
@@ -64,59 +64,141 @@
       </div>
       <div class="col-10" style="padding: 0px !important">
         <div class="container-fluid" style="padding: 5rem 6rem 6rem 6rem!important;">
-          
-          <div class="table-responsive table-course" style="min-width: 700px; height: calc(100vh - 23rem); width: 100%;">
-            <h2 class="table-label">Lịch sử đăng ký học phần</h2>
-            <table class="table table-responsive table-hover">
-              <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
-                <tr>
-                  <th style="width: 8%">Mã<br>Môn Học</th>
-                  <th style="width: 24%">
-                    <div style="display:flex; align-items:center; justify-content: center">
-                      <div style="margin-left: 0;">Tên Môn Học</div>
-                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                    </div>
-                  </th>
-                  <th style="width: 11%">
-                    <div style="display:flex; align-items:center; justify-content: center">
-                      <div style="margin-left: auto">Tên Lớp</div>
-                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                    </div>
-                  </th>
-                  <th style="width: 11%">
-                    <div style="display:flex; align-items:center; justify-content: center">
-                      <div style="margin-left: auto">Thao tác</div>
-                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                    </div>
-                  </th>
-                  <th style="width: 11%">
-                    <div style="display:flex; align-items:center; justify-content: center">
-                      <div style="margin-left: auto">Thời gian</div>
-                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                    </div>
-                  <th style="width: 11%">
-                    <div style="display:flex; align-items:center; justify-content: center">
-                      <div style="margin-left: auto">Thực hiện</div>
-                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                    </div>
-                  </th>
-                  <th style="width: 24%"></th>
-                </tr>
-              </thead>
-            <tbody>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>ĐKHP</td>
-                <td>13/03/2022<br>09:45:48 AM</td>
-                <td>Giáo vụ Khoa</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="container-table" style="height: calc(100vh - 23rem)">
+            <div class="table-responsive" style="width: 100%; height: 100%">
+              <h2 class="table-label">Lịch sử đăng ký học phần</h2>
+              <table class="table table-responsive table-hover">
+                <thead>
+                  <tr>
+                    <th style="width: 8%">Mã<br>Môn Học</th>
+                    <th style="width: 24%">
+                      <div style="display:flex; align-items:center; justify-content: center">
+                        <div style="margin-left: 0;">Tên Môn Học</div>
+                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                      </div>
+                    </th>
+                    <th style="width: 11%">
+                      <div style="display:flex; align-items:center; justify-content: center">
+                        <div style="margin-left: auto">Tên Lớp</div>
+                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                      </div>
+                    </th>
+                    <th style="width: 11%">
+                      <div style="display:flex; align-items:center; justify-content: center">
+                        <div style="margin-left: auto">Thao tác</div>
+                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                      </div>
+                    </th>
+                    <th style="width: 11%">
+                      <div style="display:flex; align-items:center; justify-content: center">
+                        <div style="margin-left: auto">Thời gian</div>
+                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                      </div>
+                    <th style="width: 11%">
+                      <div style="display:flex; align-items:center; justify-content: center">
+                        <div style="margin-left: auto">Thực hiện</div>
+                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                      </div>
+                    </th>
+                    <th style="width: 24%"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CSC13002</td>
+                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
+                    <td>20_3</td>
+                    <td>ĐKHP</td>
+                    <td>13/03/2022<br>09:45:48 AM</td>
+                    <td>Giáo vụ Khoa</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>

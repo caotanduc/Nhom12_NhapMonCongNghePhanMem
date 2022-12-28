@@ -13,7 +13,7 @@
     border: none !important;
 }
 
-.list-group-item{
+.list-group-item {
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 4rem;
@@ -23,14 +23,13 @@
     border-top: 1px solid #0066FF;
 }
 
-.navbar .filter-bar{
+.navbar .filter-bar {
     height: 5rem;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-
-.navbar .label{
+.navbar .label {
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 3rem;
@@ -39,7 +38,7 @@
     color: #333333;
 }
 
-.navbar .form-select{
+.navbar .form-select {
     height: 100%;
     width: max-content;
     text-align: left;
@@ -48,7 +47,7 @@
     margin: auto 0.5rem;
     border-radius: 0 !important;
     border: none !important;
-    padding: 0 3rem 0 1rem!important;
+    padding: 0 3rem 0 1rem !important;
 }
 
 .nav-item-button,
@@ -78,16 +77,34 @@
     padding: 0 3rem;
 }
 
-.table-course {
-    padding-top: 2.4rem; 
+.container-table {
+    position: block;
+    min-width: 700px;
+    padding: 2.6rem 0 0 0;
     border: 2px solid #0066FF;
 }
 
 th {
     font-weight: 600;
     font-size: 2rem;
-    line-height: 3rem;
+    line-height: 2.5rem;
     color: #0066FF;
+}
+
+thead {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #F0F4F8;
+    z-index: 999;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: inset 0 -1px 0 #8B8A98;
+    padding: 2px 0;
+}
+
+table tbody:nth-of-type(1) tr:nth-of-type(1) td {
+    border-top: none !important;
 }
 
 td {

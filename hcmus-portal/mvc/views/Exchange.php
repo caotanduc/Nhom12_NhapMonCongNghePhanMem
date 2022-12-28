@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <?php 
-        echo '<style>.nav-item.exchange{ background-color: #cde0ff !important; }</style>';
-        include "./NavBar.html"; 
-    ?>
+  <?php
+  echo '<style>.nav-item.exchange{ background-color: #cde0ff !important; }</style>';
+  include "./NavBar.html";
+  ?>
   <link rel="stylesheet" href="../../public/css/Exchange.css" />
 </head>
 
@@ -37,7 +37,7 @@
       </div>
       <div class="col-10" style="padding: 0px !important">
         <!-- Table-->
-        <div class="table-responsive" style="min-width: 700px; min-height: calc(100vh - 22rem)">
+        <div class="table-responsive" style="min-width: 700px; height: calc(100vh - 22rem)">
           <table class="table table-responsive table-hover">
             <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
               <tr>
@@ -126,12 +126,142 @@
                 <td>4</td>
                 <td>T2 (1-4)</td>
               </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
+              <tr>
+                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                <td>CSC13002</td>
+                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T4 (6-9)</td>
+                <td>CSC13001</td>
+                <td>Lập trình Windows</td>
+                <td>20_3</td>
+                <td>4</td>
+                <td>T2 (1-4)</td>
+              </tr>
             </tbody>
-          </table> 
+          </table>
         </div>
-          <form action="" class="trade" method="post">
-            <button type="submit" class="btn-trade">Trao đổi</button>
-          </form>
+        <form action="" class="trade" method="post">
+          <button type="submit" class="btn-trade">Trao đổi</button>
+        </form>
       </div>
     </div>
   </div>

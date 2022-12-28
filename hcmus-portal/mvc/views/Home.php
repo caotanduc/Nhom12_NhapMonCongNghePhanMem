@@ -15,10 +15,7 @@
 </head>
 
 <body>
-
-
   <header>
-
     <div class="logo">
       <img src="../../public/img/img_LandingGr12.png" alt="" class="header-logo">
     </div>
@@ -50,8 +47,8 @@
   <div class="footer">
     <form method="post">
       <div class="Profile">
-          <a href="./ProfilePage.php"><img src="../../public/img/img_Landing1.png" alt=""></a>
-          <a href="./ProfilePage.php" class="text">THÔNG TIN<br>CÁ NHÂN</a> 
+        <a href="./ProfilePage.php"><img src="../../public/img/img_Landing1.png" alt=""></a>
+        <a href="./ProfilePage.php" class="text">THÔNG TIN<br>CÁ NHÂN</a>
       </div>
 
       <div class="Profile">
@@ -60,8 +57,8 @@
       </div>
 
       <div class="Profile">
-          <a href="./Register.php"><img src="../../public/img/img_Landing3.png" alt=""></a>
-          <a href="./Register.php" class="text">ĐĂNG KÝ<br>HỌC PHẦN</a>
+        <a href="./Register.php"><img src="../../public/img/img_Landing3.png" alt=""></a>
+        <a href="./Register.php" class="text">ĐĂNG KÝ<br>HỌC PHẦN</a>
       </div>
 
       <div class="Profile">
