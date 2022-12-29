@@ -14,7 +14,8 @@ SET time_zone = "+07:00";
 --
 -- Cơ sở dữ liệu: `crs_3`
 --
-
+CREATE SCHEMA IF NOT EXISTS `crs_3`;
+USE `crs_3` ;
 -- --------------------------------------------------------
 
 --
