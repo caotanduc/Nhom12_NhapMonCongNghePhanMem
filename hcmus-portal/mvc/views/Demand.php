@@ -1,3 +1,27 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT co.ID, co.name, c.name AS class_name, co.credits, aci.room, en.period_id, en.class_id, d.name as day_name, aci.start_period, aci.end_period
+FROM enrollment en INNER JOIN class c ON en.class_id = c.ID
+INNER JOIN course co ON en.course_id = co.ID
+INNER JOIN available_course_info aci ON en.period_id = aci.period_id AND en.course_id = aci.course_id AND en.class_id = aci.class_id
+INNER JOIN day d on d.num = aci.day
+WHERE en.student_id = " . $_SESSION['student_id'];
+
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+
+$sql2 = "SELECT co.ID, co.name, cl.name AS class_name, co.credits, cl.school_year, aci.room, aci.period_id, aci.class_id, d.name AS day_name, aci.start_period, aci.end_period
+FROM available_course_info aci INNER JOIN course co ON aci.course_id  = co.ID
+INNER JOIN class cl ON aci.class_id = cl.ID
+INNER JOIN available_course ac ON aci.period_id = ac.period_id AND aci.course_id = ac.course_id
+INNER JOIN day d ON d.num = aci.day
+WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.student_id = '". $_SESSION['student_id']."')";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +63,7 @@
         <div class="container-fluid" style="padding: 3rem 8rem 4rem 6rem!important;">
           <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem;">
             <label class="form-label" for="exchange-course">Môn muốn trao đổi:</label>
-            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 60vw;">
+            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 61vw;">
           </form>
 
           <div class="container-table" style="height: 28vh">
@@ -68,7 +92,7 @@
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
                     </th>
-                    <th style="width: 10%">
+                    <th style="width: 14%">
                       <div style="display:flex; align-items:center; justify-content: center">
                         <div style="margin-left: auto">Lịch học</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -86,129 +110,38 @@
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
                     </th>
-                    <th style="width: 16%"></th> <!-- blank-->
+                    <th style="width: 12%"></th> <!-- blank-->
                   </tr>
                 </thead>
                 <!--Data-->
                 <tbody>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13007</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Hệ Điều Hành</td>
-                    <td>20_4</td>
-                    <td>4</td>
-                    <td>T4 (1-4)</td>
-                    <td></td>
-                    <td>LT-E202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13007</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Hệ Điều Hành</td>
-                    <td>20_4</td>
-                    <td>4</td>
-                    <td>T4 (1-4)</td>
-                    <td></td>
-                    <td>LT-E202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13007</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Hệ Điều Hành</td>
-                    <td>20_4</td>
-                    <td>4</td>
-                    <td>T4 (1-4)</td>
-                    <td></td>
-                    <td>LT-E202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13007</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Hệ Điều Hành</td>
-                    <td>20_4</td>
-                    <td>4</td>
-                    <td>T4 (1-4)</td>
-                    <td></td>
-                    <td>LT-E202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13007</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Hệ Điều Hành</td>
-                    <td>20_4</td>
-                    <td>4</td>
-                    <td>T4 (1-4)</td>
-                    <td></td>
-                    <td>LT-E202</td>
-                    <td></td>
-                  </tr>
+
+                  <?php 
+                  while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" name="select-give[]" value="
+                      <?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" />&nbsp</td>
+                      <td><?php echo $row['ID']; ?></td>
+                      <td style="text-align: left">
+                        <?php echo $row['name']; ?></td>
+                      <td><?php echo $row['class_name']; ?></td>
+                      <td><?php echo $row['credits']; ?></td>
+                      <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
+                      <td></td>
+                      <td><?php echo $row['room']; ?></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <?php } ?>
+
                 </tbody>
               </table>
             </div>
           </div>
 
           <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem; margin-top: 3rem;">
-            <label class="form-label" for="exchange-course">Môn muốn trao đổi:</label>
-            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 60vw;">
+            <label class="form-label" for="exchange-course">Môn muốn nhận được:</label>
+            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 59vw;">
           </form>
 
           <div class="container-table" style="height: 24vh">
@@ -266,66 +199,26 @@
                 </thead>
                 <!--Data-->
                 <tbody>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>2020</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>2020</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>2020</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>2020</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td>2020</td>
-                    <td>T4 (6-9)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
+                <?php
+                    $query = $conn->query($sql2);
+                    $query->setFetchMode(PDO::FETCH_ASSOC);
+
+                    while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" name="select-cancel[]" value="
+                      <?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" />&nbsp</td>
+                      <td><?php echo $row['ID']; ?></td>
+                      <td style="text-align: left;">
+                        <?php echo $row['name']; ?></td>
+                      <td><?php echo $row['class_name']; ?></td>
+                      <td><?php echo $row['school_year']; ?></td>
+                      <td><?php echo $row['credits']; ?></td>
+                      <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
+                      <td></td>
+                      <td><?php echo $row['room']; ?></td>
+                      <td></td>
+                    </tr>
+                    <?php } ?>
                 </tbody>
               </table>
             </div>
