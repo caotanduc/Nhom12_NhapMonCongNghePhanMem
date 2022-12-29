@@ -164,7 +164,9 @@ where en.student_id = " . $_SESSION['student_id'];
 
             <?php
             if (isset($_SESSION['status1'])) {
-              echo "<h4>" . $_SESSION['status1'] . "</h4>";
+              echo '<div class="alert alert-success alert-dismissible" style="position: absolute; margin-top: 1rem; padding-left: 5rem; width: 62vw; font-size: 2rem">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>' . $_SESSION['status1'] . '</strong></div>';
               unset($_SESSION['status1']);
             }
             ?>
@@ -251,7 +253,9 @@ where en.student_id = " . $_SESSION['student_id'];
 
             <?php
             if (isset($_SESSION['status'])) {
-              echo "<h4>" . $_SESSION['status'] . "</h4>";
+              echo '<div class="alert alert-success alert-dismissible" style="position: absolute; margin-top: 1rem; padding-left: 5rem; width: 62vw; font-size: 2rem">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>' . $_SESSION['status'] . '</strong></div>';
               unset($_SESSION['status']);
             }
             ?>
