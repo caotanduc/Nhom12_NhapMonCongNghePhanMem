@@ -63,7 +63,7 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
         <div class="container-fluid" style="padding: 3rem 8rem 4rem 6rem!important;">
           <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem;">
             <label class="form-label" for="exchange-course">Môn muốn trao đổi:</label>
-            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 61vw;">
+            <input type="text" id="course-send" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 61vw">
           </form>
 
           <div class="container-table" style="height: 28vh">
@@ -119,8 +119,8 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
                   <?php 
                   while ($row = $query->fetch()) { ?>
                     <tr>
-                      <td><input class="form-check-input" type="checkbox" name="select-give[]" value="
-                      <?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" />&nbsp</td>
+                    <td><input class="form-check-input" type="radio" name="select-send" 
+                      value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" onclick="selectSend(this)"></td>
                       <td><?php echo $row['ID']; ?></td>
                       <td style="text-align: left">
                         <?php echo $row['name']; ?></td>
@@ -141,7 +141,8 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
 
           <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem; margin-top: 3rem;">
             <label class="form-label" for="exchange-course">Môn muốn nhận được:</label>
-            <input type="text" id="exchange-course" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 59vw;">
+            <!-- Text boxes to display selected row information -->
+            <input type="text" id="course-receive" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 59vw;">
           </form>
 
           <div class="container-table" style="height: 24vh">
@@ -202,11 +203,11 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
                 <?php
                     $query = $conn->query($sql2);
                     $query->setFetchMode(PDO::FETCH_ASSOC);
-
+                    $i = 1;
                     while ($row = $query->fetch()) { ?>
                     <tr>
-                      <td><input class="form-check-input" type="checkbox" name="select-cancel[]" value="
-                      <?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" />&nbsp</td>
+                      <td><input class="form-check-input" type="radio" name="select-receive" 
+                      value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" onclick="selectReceive(this)"></td>
                       <td><?php echo $row['ID']; ?></td>
                       <td style="text-align: left;">
                         <?php echo $row['name']; ?></td>
@@ -230,6 +231,9 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
         </div>
       </div>
     </div>
+    
+<!-- Include the demand-script.js file -->
+<script type="text/javascript"  src="../../public/js/demand-script.js"></script>
 </body>
 
 </html>
