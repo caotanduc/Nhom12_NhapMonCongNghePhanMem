@@ -71,91 +71,96 @@ WHERE t.state IS NOT NULL AND t.student2_id = " . $_SESSION['student_id'];
       </div>
       <div class="col-10 pane" style="padding: 0px !important">
         <div class="container-fluid" style="padding: 5rem 8rem 4rem 6rem!important;">
-        <form action="../controllers/trade-cancel.php" class="trade" method="post">
-          <div class="container-table" style="height: 32vh">
-            <div class="table-responsive" style="width: 100%; height: 100%">
-              <h2 class="table-label1">Các yêu cầu trao đổi</h2>
-              <table class="table table-responsive table-hover">
-                <thead>
-                  <tr>
-                    <th style="width: 3%"></th>
-                    <th style="width: 9%">Mã MH<br>Nhận</th>
-                    <th style="width: 21%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: 0;">Tên Môn Học Nhận</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 9%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Tên Lớp</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Lịch học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 9%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 9%">
-                      <div style="display: flex; align-items: center; justify-content: center">
-                        <div style="margin-left: auto">Tên Lớp</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Lịch học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Tình trạng</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <!--Data-->
-                <tbody>
-                <?php while ($row = $query->fetch()) { ?>
+          <form action="../controllers/demand-cancel.php" class="trade" method="post">
+            <div class="container-table" style="height: 32vh">
+              <div class="table-responsive" style="width: 100%; height: 100%">
+                <h2 class="table-label1">Các yêu cầu trao đổi</h2>
+                <table class="table table-responsive table-hover">
+                  <thead>
                     <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox" name="select-cancel[]" 
-                        value=<?php echo $row['trade_id'];?> />&nbsp
-                      </td>
-                      <td><?php echo $row['course2_id']; ?></td>
-                      <td style="text-align: left">
-                        <?php echo $row['course2_name']; ?></td>
-                      <td><?php echo $row['class_name2']; ?></td>
-                      <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
-                      <td><?php echo $row['course1_id']; ?></td>
-                      <td style="text-align: left">
-                        <?php echo $row['course1_name']; ?></td>
-                      <td><?php echo $row['class_name1']; ?></td>
-                      <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
-                      <td style="color: #FF6666">Đang đợi</td>;
+                      <th style="width: 3%"></th>
+                      <th style="width: 9%">Mã MH<br>Nhận</th>
+                      <th style="width: 21%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: 0;">Tên Môn Học Nhận</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 9%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Tên Lớp</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Lịch học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 9%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 9%">
+                        <div style="display: flex; align-items: center; justify-content: center">
+                          <div style="margin-left: auto">Tên Lớp</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Lịch học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Tình trạng</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
                     </tr>
-                    <?php } ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
+                  </thead>
+                  <!--Data-->
+                  <tbody>
+                    <?php while ($row = $query->fetch()) { ?>
+                      <tr>
+                        <td><input class="form-check-input" type="checkbox" name="select-cancel[]" value=<?php echo $row['trade_id']; ?> />&nbsp</td>
 
-            <button type="submit" class="btn-cancel">Huỷ ĐK</button>
+                        <td><?php echo $row['course2_id']; ?></td>
+                        <td style="text-align: left">
+                          <?php echo $row['course2_name']; ?></td>
+                        <td><?php echo $row['class_name2']; ?></td>
+                        <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                        <td><?php echo $row['course1_id']; ?></td>
+                        <td style="text-align: left">
+                          <?php echo $row['course1_name']; ?></td>
+                        <td><?php echo $row['class_name1']; ?></td>
+                        <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                        <td style="color: #FF6666">Đang đợi</td>;
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <button type="submit" name="cancel" class="btn-cancel">Huỷ ĐK</button>
+            <?php
+            if (isset($_SESSION['status'])) {
+              echo '<div class="alert alert-success alert-dismissible" style="position: absolute; margin-top: 1rem; padding-left: 5rem; width: 62vw; font-size: 2rem">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>' . $_SESSION['status'] . '</strong></div>';
+              unset($_SESSION['status']);
+            }
+            ?>
           </form>
           <div class="container-table" style="height: 32vh; margin-top: 9rem">
             <div class="table-responsive" style="width: 100%; height: 100%">
@@ -216,11 +221,11 @@ WHERE t.state IS NOT NULL AND t.student2_id = " . $_SESSION['student_id'];
                 </thead>
                 <!--Data-->
                 <tbody>
-                <?php
-                    $query = $conn->query($sql2);
-                    $query->setFetchMode(PDO::FETCH_ASSOC);
+                  <?php
+                  $query = $conn->query($sql2);
+                  $query->setFetchMode(PDO::FETCH_ASSOC);
 
-                    while ($row = $query->fetch()) { ?>
+                  while ($row = $query->fetch()) { ?>
                     <tr>
                       <td><?php echo $row['course2_id']; ?></td>
                       <td style="text-align: left">
@@ -234,7 +239,7 @@ WHERE t.state IS NOT NULL AND t.student2_id = " . $_SESSION['student_id'];
                       <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
                       <td style="color: #14AE5C">Hoàn thành</td>;
                     </tr>
-                    <?php } ?>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
