@@ -347,7 +347,7 @@ INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `student_id`, `target
 (1, 1, 111, 1, 222),
 (2, 2, 222, 2, 333),
 (3, 3, 333, 3, 111),
-(4, 4, 444, 4, 444);
+(4, 4, 444, 4, 222);
 
 --
 -- Chỉ mục cho các bảng đã đổ
