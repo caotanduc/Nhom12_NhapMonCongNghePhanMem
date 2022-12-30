@@ -2,6 +2,13 @@
 session_start();
 include "../config/db_connect.php";
 
+// Establishing MySQLi connection for DELETE query
+// instead of using PDO connection
+$sqli = mysqli_connect($server, $username, $password, $dbname);
+
+// For catching mysqli_sql_exception
+mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR);
+
 if (isset($_POST['cancel-button'])) {
     $all_id = $_POST['select-cancel'];
 
@@ -18,23 +25,44 @@ if (isset($_POST['cancel-button'])) {
         $class_id = $extract[2];
         $student_id = $_SESSION['student_id'];
 
-        $query = "DELETE FROM enrollment en
-        WHERE en.period_id = \"$period_id\" 
-        AND en.course_id = \"$course_id\" 
-        AND en.class_id = \"$class_id\"
-        AND en.student_id = \"$student_id\"";
+        $query = "DELETE FROM enrollment
+        WHERE period_id IN ($period_id)
+        AND course_id IN ($course_id)
+        AND class_id IN ($class_id)
+        AND student_id IN ($student_id);";
 
-        // Check query
         try {
-            $conn->exec($query);
+            $sqli->query($query) === TRUE;
             $_SESSION['status'] = "Hủy học phần thành công!";
             header("Location: ../views/Register.php");
-        } catch (PDOException $e) {
-            if ($e->getCode() == '23000') {
+        } catch (Exception $e) {
+            if ($e->getCode() == 1451) {
                 $_SESSION['status'] = "Học phần đang được sử dụng với mục đích khác, không thể xóa!";
                 header("Location: ../views/Register.php");
             }
         }
+        
+        //Fallback options
+        
+        // if (!($res->execute())) {
+        //     $_SESSION['status'] = "Học phần đang được sử dụng với mục đích khác, không thể xóa!";
+        //     header("Location: ../views/Register.php");
+        // } else {
+        //     $_SESSION['status'] = "Hủy học phần thành công!";
+        //     header("Location: ../views/Register.php");
+        // }
+
+        // Check query
+        // try {
+
+        //     $_SESSION['status'] = "Hủy học phần thành công!";
+        //     header("Location: ../views/Register.php");
+        // } catch (PDOException $e) {
+        //     if ($e->getCode() == '23000') {
+        //         $_SESSION['status'] = "Học phần đang được sử dụng với mục đích khác, không thể xóa!";
+        //         header("Location: ../views/Register.php");
+        //     }
+        // }
     }
 }
 ?>
