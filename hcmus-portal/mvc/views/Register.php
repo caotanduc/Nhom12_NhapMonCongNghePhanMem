@@ -4,7 +4,7 @@ include "../config/db_connect.php";
 
 $sql = "SELECT aci.course_id, c.name, 
 cl.name as class_name, c.credits, aci.max_student, 
-count(distinct en.student_id) as registered, ac.shool_year, 
+count(distinct en.student_id) as registered, ac.school_year, 
 d.name as day_name, aci.start_period, aci.end_period, aci.room, aci.period_id, aci.class_id
 from available_course_info aci inner join course c on aci.course_id  = c.ID
 inner join class cl on aci.class_id = cl.ID
@@ -146,7 +146,7 @@ where en.student_id = " . $_SESSION['student_id'];
                       <td><?php echo $row['credits']; ?></td>
                       <td><?php echo $row['max_student']; ?></td>
                       <td><?php echo $row['registered']; ?></td>
-                      <td><?php echo $row['shool_year']; ?></td>
+                      <td><?php echo $row['school_year']; ?></td>
                       <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?>
                       </td>
                       <td></td>

@@ -18,7 +18,7 @@ FROM available_course_info aci INNER JOIN course co ON aci.course_id  = co.ID
 INNER JOIN class cl ON aci.class_id = cl.ID
 INNER JOIN available_course ac ON aci.period_id = ac.period_id AND aci.course_id = ac.course_id
 INNER JOIN day d ON d.num = aci.day
-WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.student_id = '". $_SESSION['student_id']."')";
+WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.student_id = '" . $_SESSION['student_id'] . "')";
 ?>
 
 
@@ -61,179 +61,183 @@ WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.stud
       </div>
       <div class="col-10 pane" style="padding: 0px !important">
         <div class="container-fluid" style="padding: 3rem 8rem 4rem 6rem!important;">
-          <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem;">
-            <label class="form-label" for="exchange-course">Môn muốn trao đổi:</label>
-            <input type="text" id="course-send" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 61vw">
-          </form>
 
-          <div class="container-table" style="height: 28vh">
-            <div class="table-responsive" style="width: 100%; height: 100%">
-              <h2 class="table-label1">Danh sách môn học đã đăng ký</h2>
-              <table class="table table-responsive table-hover">
-                <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
-                  <tr>
-                    <th style="width: 6%"></th>
-                    <th style="width: 8%">Mã<br>Môn Học</th>
-                    <th style="width: 21%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: 1rem;">Tên Môn Học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Tên Lớp</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Số tín chỉ</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 14%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Lịch học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display: flex; align-items: center; justify-content: center">
-                        <div style="margin-left: auto">Nhóm TH</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Địa điểm</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 12%"></th> <!-- blank-->
-                  </tr>
-                </thead>
-                <!--Data-->
-                <tbody>
+          <form action="../controllers/demand-reg.php" class="demand" method="post">
 
-                  <?php 
-                  while ($row = $query->fetch()) { ?>
-                    <tr>
-                    <td><input class="form-check-input" type="radio" name="select-send" 
-                      value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" onclick="selectSend(this)"></td>
-                      <td><?php echo $row['ID']; ?></td>
-                      <td style="text-align: left">
-                        <?php echo $row['name']; ?></td>
-                      <td><?php echo $row['class_name']; ?></td>
-                      <td><?php echo $row['credits']; ?></td>
-                      <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
-                      <td></td>
-                      <td><?php echo $row['room']; ?></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <?php } ?>
-
-                </tbody>
-              </table>
+            <div class="form-exchange" style="display: flex; width: 100%">
+              <label class="form-label">Môn muốn trao đổi:</label>
+              <input type="text" id="course-send" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: inline-block; width: calc( 100% - 35.25rem)">
             </div>
-          </div>
 
-          <form action="" class="form-exchange" method="post" style="white-space: nowrap; width: 100%; margin-bottom: 3rem; margin-top: 3rem;">
-            <label class="form-label" for="exchange-course">Môn muốn nhận được:</label>
-            <!-- Text boxes to display selected row information -->
-            <input type="text" id="course-receive" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: absolute; width: 59vw;">
-          </form>
+            <div class="container-table" style="height: 28vh; margin-top: 3rem">
+              <div class="table-responsive" style="width: 100%; height: 100%">
+                <h2 class="table-label1">Danh sách môn học đã đăng ký</h2>
+                <table class="table table-responsive table-hover">
+                  <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
+                    <tr>
+                      <th style="width: 6%"></th>
+                      <th style="width: 8%">Mã<br>Môn Học</th>
+                      <th style="width: 21%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: 1rem;">Tên Môn Học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Tên Lớp</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Số tín chỉ</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 14%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Lịch học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display: flex; align-items: center; justify-content: center">
+                          <div style="margin-left: auto">Nhóm TH</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Địa điểm</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 12%"></th> <!-- blank-->
+                    </tr>
+                  </thead>
+                  <!--Data-->
+                  <tbody>
+                    <?php
+                    while ($row = $query->fetch()) { ?>
+                      <tr>
+                        <td><input class="form-check-input" type="radio" name="select-send" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectSend(this)"></td>
+                        <td><?php echo $row['ID']; ?></td>
+                        <td style="text-align: left">
+                          <?php echo $row['name']; ?></td>
+                        <td><?php echo $row['class_name']; ?></td>
+                        <td><?php echo $row['credits']; ?></td>
+                        <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
+                        <td></td>
+                        <td><?php echo $row['room']; ?></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-          <div class="container-table" style="height: 24vh">
-            <div class="table-responsive" style="width: 100%; height: 100%">
-              <h2 class="table-label2">Danh sách môn học</h2>
-              <table class="table table-responsive table-hover">
-                <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
-                  <tr>
-                    <th style="width: 6%"></th>
-                    <th style="width: 8%">Mã<br>Môn Học</th>
-                    <th style="width: 21%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: 1rem;">Tên Môn Học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Tên Lớp</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Khoá</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Số tín chỉ</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Lịch học</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display: flex; align-items: center; justify-content: center">
-                        <div style="margin-left: auto">Nhóm TH</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 10%">
-                      <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Địa điểm</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    </th>
-                    <th style="width: 6%"></th> <!-- blank-->
-                  </tr>
-                </thead>
-                <!--Data-->
-                <tbody>
-                <?php
+            <div class="form-exchange" style="display: flex; width: 100%; margin-top: 2rem; margin-bottom: 3rem">
+              <label class="form-label">Môn muốn nhận được:</label>
+              <input type="text" id="course-receive" style="font-weight: 500; font-size: 2rem; height: 4.6rem; position: inline-block; width: calc( 100% - 35rem)">
+            </div>
+
+            <div class="container-table" style="height: 24vh">
+              <div class="table-responsive" style="width: 100%; height: 100%">
+                <h2 class="table-label2">Danh sách môn học</h2>
+                <table class="table table-responsive table-hover">
+                  <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
+                    <tr>
+                      <th style="width: 6%"></th>
+                      <th style="width: 8%">Mã<br>Môn Học</th>
+                      <th style="width: 21%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: 1rem;">Tên Môn Học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Tên Lớp</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Khoá</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Số tín chỉ</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Lịch học</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display: flex; align-items: center; justify-content: center">
+                          <div style="margin-left: auto">Nhóm TH</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 10%">
+                        <div style="display:flex; align-items:center; justify-content: center">
+                          <div style="margin-left: auto">Địa điểm</div>
+                          <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                        </div>
+                      </th>
+                      <th style="width: 6%"></th> <!-- blank-->
+                    </tr>
+                  </thead>
+                  <!--Data-->
+                  <tbody>
+                    <?php
                     $query = $conn->query($sql2);
                     $query->setFetchMode(PDO::FETCH_ASSOC);
-                    $i = 1;
                     while ($row = $query->fetch()) { ?>
-                    <tr>
-                      <td><input class="form-check-input" type="radio" name="select-receive" 
-                      value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id'];?>" onclick="selectReceive(this)"></td>
-                      <td><?php echo $row['ID']; ?></td>
-                      <td style="text-align: left;">
-                        <?php echo $row['name']; ?></td>
-                      <td><?php echo $row['class_name']; ?></td>
-                      <td><?php echo $row['school_year']; ?></td>
-                      <td><?php echo $row['credits']; ?></td>
-                      <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
-                      <td></td>
-                      <td><?php echo $row['room']; ?></td>
-                      <td></td>
-                    </tr>
+                      <tr>
+                        <td><input class="form-check-input" type="radio" name="select-receive" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectReceive(this)"></td>
+                        <td><?php echo $row['ID']; ?></td>
+                        <td style="text-align: left;">
+                          <?php echo $row['name']; ?></td>
+                        <td><?php echo $row['class_name']; ?></td>
+                        <td><?php echo $row['school_year']; ?></td>
+                        <td><?php echo $row['credits']; ?></td>
+                        <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?></td>
+                        <td></td>
+                        <td><?php echo $row['room']; ?></td>
+                        <td></td>
+                      </tr>
                     <?php } ?>
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <form action="" class="register" method="post">
-              <button type="submit" class="btn-register">Đăng ký</button>
-            </form>
-          </div>
+            <button type="submit" name="register-button" class="demand btn-register">Đăng ký</button>
+            <?php
+              if (isset($_SESSION['status'])) {
+                echo '<div class="alert alert-success alert-dismissible" style="position: absolute; margin-top: 1rem; padding-left: 5rem; width: 62vw; font-size: 2rem">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                  <strong>' . $_SESSION['status'] . '</strong></div>';
+                unset($_SESSION['status']);
+            }
+            ?>
+          </form>
         </div>
       </div>
     </div>
-    
-<!-- Include the demand-script.js file -->
-<script type="text/javascript"  src="../../public/js/demand-script.js"></script>
+
+    <!-- Include the demand-script.js file -->
+    <script type="text/javascript" src="../../public/js/demand-script.js"></script>
 </body>
 
 </html>

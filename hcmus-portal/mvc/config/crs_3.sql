@@ -53,14 +53,14 @@ CREATE TABLE `available_course` (
   `period_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `faculty` int(11) NOT NULL,
-  `shool_year` year(4) NOT NULL
+  `school_year` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `available_course`
 --
 
-INSERT INTO `available_course` (`period_id`, `course_id`, `faculty`, `shool_year`) VALUES
+INSERT INTO `available_course` (`period_id`, `course_id`, `faculty`, `school_year`) VALUES
 (1, 111, 2018, 2018),
 (2, 222, 2019, 2019),
 (3, 333, 2020, 2020),
@@ -306,7 +306,7 @@ CREATE TABLE `student` (
   `password` varchar(100) NOT NULL,
   `faculty` int(11) NOT NULL,
   `class` int(11) NOT NULL,
-  `shool_year` year(4) NOT NULL,
+  `school_year` year(4) NOT NULL,
   `fullname` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(45) NOT NULL,
   `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -318,7 +318,7 @@ CREATE TABLE `student` (
 -- Đang đổ dữ liệu cho bảng `student`
 --
 
-INSERT INTO `student` (`ID`, `username`, `password`, `faculty`, `class`, `shool_year`, `fullname`, `email`, `address`, `date_of_birth`, `max_credits`) VALUES
+INSERT INTO `student` (`ID`, `username`, `password`, `faculty`, `class`, `school_year`, `fullname`, `email`, `address`, `date_of_birth`, `max_credits`) VALUES
 (1, '001', 'student001', 2018, 101, 2018, 'Nguyễn Văn A', '001@student.edu.vn', 'Nguyễn Văn Tăng', '2000-12-11', 25),
 (2, '002', 'student002', 2019, 202, 2019, 'Nguyễn Văn B', '002@student.edu.vn', 'Lê Văn Việt', '2001-11-10', 25),
 (3, '003', 'student003', 2020, 303, 2020, 'Trương Văn C', '003@student.edu.vn', 'Võ Văn Ngân', '2002-10-09', 25),
@@ -335,7 +335,7 @@ CREATE TABLE `trade` (
   `period_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `target_couse_id` int(11) NOT NULL,
+  `target_course_id` int(11) NOT NULL,
   `student2_id` int(11) DEFAULT NULL,
   `state` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -344,11 +344,11 @@ CREATE TABLE `trade` (
 -- Đang đổ dữ liệu cho bảng `trade`
 --
 
-INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `student_id`, `target_couse_id`, `student2_id`, `state`) VALUES
-(1, 1, 111, 1, 222, 2, 1),
-(2, 2, 222, 2, 333, 3, 2),
-(3, 3, 333, 3, 111, 4, 4),
-(4, 4, 444, 4, 444, 1, 3);
+INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `student_id`, `target_course_id`) VALUES
+(1, 1, 111, 1, 222),
+(2, 2, 222, 2, 333),
+(3, 3, 333, 3, 111),
+(4, 4, 444, 4, 444);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -368,7 +368,7 @@ ALTER TABLE `available_course`
   ADD PRIMARY KEY (`period_id`,`course_id`),
   ADD KEY `fk_availablecourse_course_idx` (`course_id`),
   ADD KEY `fk_availablecourse_faculty_idx` (`faculty`),
-  ADD KEY `fk_availablecourse_schoolyear_idx` (`shool_year`);
+  ADD KEY `fk_availablecourse_schoolyear_idx` (`school_year`);
 
 --
 -- Chỉ mục cho bảng `available_course_info`
@@ -450,7 +450,7 @@ ALTER TABLE `student`
   ADD UNIQUE KEY `username_UNIQUE` (`username`),
   ADD KEY `fk_student_faculty_idx` (`faculty`),
   ADD KEY `fk_studnet_class_idx` (`class`),
-  ADD KEY `fk_student_schoolyear_idx` (`shool_year`);
+  ADD KEY `fk_student_schoolyear_idx` (`school_year`);
 
 --
 -- Chỉ mục cho bảng `trade`
@@ -458,7 +458,7 @@ ALTER TABLE `student`
 ALTER TABLE `trade`
   ADD PRIMARY KEY (`trade_ID`),
   ADD KEY `fk_trade_enrollment_idx` (`period_id`,`course_id`,`student_id`),
-  ADD KEY `fk_trade_course_idx` (`target_couse_id`),
+  ADD KEY `fk_trade_course_idx` (`target_course_id`),
   ADD KEY `fk_trade_student2_idx` (`student2_id`);
 
 --
@@ -524,7 +524,7 @@ ALTER TABLE `available_course`
   ADD CONSTRAINT `fk_availablecourse_course` FOREIGN KEY (`course_id`) REFERENCES `course` (`ID`),
   ADD CONSTRAINT `fk_availablecourse_faculty` FOREIGN KEY (`faculty`) REFERENCES `faculty` (`ID`),
   ADD CONSTRAINT `fk_availablecourse_registrationperiod` FOREIGN KEY (`period_id`) REFERENCES `registration_period` (`id`),
-  ADD CONSTRAINT `fk_availablecourse_schoolyear` FOREIGN KEY (`shool_year`) REFERENCES `school_year` (`year`);
+  ADD CONSTRAINT `fk_availablecourse_schoolyear` FOREIGN KEY (`school_year`) REFERENCES `school_year` (`year`);
 
 --
 -- Các ràng buộc cho bảng `available_course_info`
@@ -564,13 +564,13 @@ ALTER TABLE `enrollment`
 ALTER TABLE `student`
   ADD CONSTRAINT `fk_student_class` FOREIGN KEY (`class`) REFERENCES `class` (`ID`),
   ADD CONSTRAINT `fk_student_faculty` FOREIGN KEY (`faculty`) REFERENCES `faculty` (`ID`),
-  ADD CONSTRAINT `fk_student_schoolyear` FOREIGN KEY (`shool_year`) REFERENCES `school_year` (`year`);
+  ADD CONSTRAINT `fk_student_schoolyear` FOREIGN KEY (`school_year`) REFERENCES `school_year` (`year`);
 
 --
 -- Các ràng buộc cho bảng `trade`
 --
 ALTER TABLE `trade`
-  ADD CONSTRAINT `fk_trade_course` FOREIGN KEY (`target_couse_id`) REFERENCES `course` (`ID`),
+  ADD CONSTRAINT `fk_trade_course` FOREIGN KEY (`target_course_id`) REFERENCES `course` (`ID`),
   ADD CONSTRAINT `fk_trade_enrollment` FOREIGN KEY (`period_id`,`course_id`,`student_id`) REFERENCES `enrollment` (`period_id`, `course_id`, `student_id`),
   ADD CONSTRAINT `fk_trade_student2` FOREIGN KEY (`student2_id`) REFERENCES `student` (`ID`);
 COMMIT;
