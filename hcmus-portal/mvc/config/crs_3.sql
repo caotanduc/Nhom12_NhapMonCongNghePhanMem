@@ -135,10 +135,10 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`ID`, `name`, `credits`, `faculty`) VALUES
-(111, 'VLDC_1', 3, 2018),
+(111, 'Vật lý đại cương 1', 3, 2018),
 (222, 'Toán rời rạc', 3, 2019),
-(333, 'TLDC', 2, 2020),
-(444, 'NM CNPM', 4, 2021);
+(333, 'Tâm lý đại cương', 2, 2020),
+(444, 'Nhập môn công nghệ phần mềm', 4, 2021);
 
 -- --------------------------------------------------------
 
@@ -156,12 +156,12 @@ CREATE TABLE `day` (
 --
 
 INSERT INTO `day` (`num`, `name`) VALUES
-(2, 'Thứ Hai'),
-(3, 'Thứ Ba'),
-(4, 'Thứ Tư'),
-(5, 'Thứ Năm'),
-(6, 'Thứ Sáu'),
-(7, 'Thứ 7');
+(2, 'T2'),
+(3, 'T3'),
+(4, 'T4'),
+(5, 'T5'),
+(6, 'T6'),
+(7, 'T7');
 
 -- --------------------------------------------------------
 
@@ -343,7 +343,6 @@ CREATE TABLE `trade` (
 --
 -- Đang đổ dữ liệu cho bảng `trade`
 --
-
 INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `student_id`, `target_course_id`) VALUES
 (1, 1, 111, 1, 222),
 (2, 2, 222, 2, 333),
