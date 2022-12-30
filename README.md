@@ -23,18 +23,25 @@ Danh sách thành viên
 ## Cấu trúc cây thư mục
 ```bash
 .
-├───src
-├───docs
-│   ├───analysis and design
-│   ├───management
-│   ├───requirements
-│   └───testing
-└───pa
+├── docs
+├── hcmus-portal
+│   ├── index.php
+│   ├── mvc
+│   │   ├── config
+│   │   ├── controllers
+│   │   ├── core
+│   │   ├── models
+│   │   └── views
+│   └── public
+│       ├── css
+│       ├── img
+│       └── js
+└── pa
 ```
 
 
 Trong đó:
-- src: chứa mã nguồn
+- hcmus-portal: chứa mã nguồn chính
 - docs: chứa tài liệu
 - pa: chứa các bài nôp
 
