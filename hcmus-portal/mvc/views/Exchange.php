@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT t.trade_id, t.student_id, co1.ID AS course1_id, co1.name AS course1_name, cl1.name AS class_name1, co1.credits AS course1_cre, d1.name AS day_name1, aci1.start_period AS course1_start, aci1.end_period AS course1_end,
+        co2.ID AS course2_id, co2.name AS course2_name, cl2.name AS class_name2, co2.credits AS course2_cre, d2.name AS day_name2, aci2.start_period AS course2_start, aci2.end_period AS course2_end
+FROM trade t INNER JOIN course co1 ON t.course_id = co1.ID
+INNER JOIN available_course_info aci1 ON t.period_id = aci1.period_id AND t.course_id = aci1.course_id
+INNER JOIN class cl1 ON cl1.ID = aci1.class_id
+INNER JOIN day d1 on d1.num = aci1.day
+INNER JOIN course co2 ON t.target_course_id = co2.ID
+INNER JOIN available_course_info aci2 ON t.target_course_id = aci2.course_id
+INNER JOIN class cl2 ON cl2.ID = aci2.class_id
+INNER JOIN day d2 on d2.num = aci2.day";
+
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,231 +57,94 @@
         </div>
       </div>
       <div class="col-10" style="padding: 0px !important">
-        <!-- Table-->
-        <div class="table-responsive" style="min-width: 700px; height: calc(100vh - 22rem)">
-          <table class="table table-responsive table-hover">
-            <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
-              <tr>
-                <th style="width: 4%"></th>
-                <th style="width: 8.5%">Mã MH<br>Nhận</th>
-                <th style="width: 19.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: 0;">Tên Môn Học Nhận</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Tên Lớp</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Số tín chỉ</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Lịch học</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display: flex; align-items: center; justify-content: center">
-                    <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Tên Lớp</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Số tín chỉ</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-                <th style="width: 8.5%">
-                  <div style="display:flex; align-items:center; justify-content: center">
-                    <div style="margin-left: auto">Lịch học</div>
-                    <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-              <tr>
-                <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T4 (6-9)</td>
-                <td>CSC13001</td>
-                <td>Lập trình Windows</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>T2 (1-4)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <form action="" class="trade" method="post">
-          <button type="submit" class="btn-trade">Trao đổi</button>
+        <form action="../controllers/trade.php" class="demand" method="post">
+          <!-- Table-->
+          <div class="table-responsive" style="min-width: 700px; height: calc(100vh - 22rem)">
+            <table class="table table-responsive table-hover">
+              <thead style="background-color: #F0F4F8; border-bottom: 1px solid #8B8A98;">
+                <tr>
+                  <th style="width: 4%"></th>
+                  <th style="width: 8.5%">Mã MH<br>Nhận</th>
+                  <th style="width: 15.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: 0;">Tên Môn Học Nhận</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Tên Lớp</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Số tín chỉ</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 10.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Lịch học</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display: flex; align-items: center; justify-content: center">
+                      <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Tên Lớp</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 8.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Số tín chỉ</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                  <th style="width: 10.5%">
+                    <div style="display:flex; align-items:center; justify-content: center">
+                      <div style="margin-left: auto">Lịch học</div>
+                      <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <?php
+                while ($row = $query->fetch()) { ?>
+                  <tr>
+                    <td><input class="form-check-input" type="radio" name="select-demand" value="<?php echo $row['trade_id']; ?>"></td>
+                    <td><?php echo $row['course2_id']; ?></td>
+                    <td style="text-align: left">
+                      <?php echo $row['course2_name']; ?></td>
+                    <td><?php echo $row['class_name2']; ?></td>
+                    <td><?php echo $row['course2_cre']; ?></td>
+                    <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                    <td><?php echo $row['course1_id']; ?></td>
+                    <td style="text-align: left">
+                      <?php echo $row['course1_name']; ?></td>
+                    <td><?php echo $row['class_name1']; ?></td>
+                    <td><?php echo $row['course1_cre']; ?></td>
+                    <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                  </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
+          <button type="submit" name="trade" class="btn-trade">Trao đổi</button>
         </form>
       </div>
     </div>
