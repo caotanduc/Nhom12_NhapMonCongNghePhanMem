@@ -1,3 +1,37 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT t.trade_id, co1.ID AS course1_id, co1.name AS course1_name, cl1.name AS class_name1, co1.credits AS course1_cre, d1.name AS day_name1, aci1.start_period AS course1_start, aci1.end_period AS course1_end,
+        co2.ID AS course2_id, co2.name AS course2_name, cl2.name AS class_name2, co2.credits AS course2_cre, d2.name AS day_name2, aci2.start_period AS course2_start, aci2.end_period AS course2_end
+FROM trade t INNER JOIN course co1 ON t.course_id = co1.ID
+INNER JOIN available_course_info aci1 ON t.period_id = aci1.period_id AND t.course_id = aci1.course_id
+INNER JOIN class cl1 ON cl1.ID = aci1.class_id
+INNER JOIN day d1 on d1.num = aci1.day
+INNER JOIN course co2 ON t.target_course_id = co2.ID
+INNER JOIN available_course_info aci2 ON t.target_course_id = aci2.course_id
+INNER JOIN class cl2 ON cl2.ID = aci2.class_id
+INNER JOIN day d2 on d2.num = aci2.day
+WHERE t.state IS NULL AND t.student_id = " . $_SESSION['student_id'];
+
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+
+$sql2 = $sql = "SELECT t.trade_id, co1.ID AS course1_id, co1.name AS course1_name, cl1.name AS class_name1, co1.credits AS course1_cre, d1.name AS day_name1, aci1.start_period AS course1_start, aci1.end_period AS course1_end,
+co2.ID AS course2_id, co2.name AS course2_name, cl2.name AS class_name2, co2.credits AS course2_cre, d2.name AS day_name2, aci2.start_period AS course2_start, aci2.end_period AS course2_end
+FROM trade t INNER JOIN course co1 ON t.course_id = co1.ID
+INNER JOIN available_course_info aci1 ON t.period_id = aci1.period_id AND t.course_id = aci1.course_id
+INNER JOIN class cl1 ON cl1.ID = aci1.class_id
+INNER JOIN day d1 on d1.num = aci1.day
+INNER JOIN course co2 ON t.target_course_id = co2.ID
+INNER JOIN available_course_info aci2 ON t.target_course_id = aci2.course_id
+INNER JOIN class cl2 ON cl2.ID = aci2.class_id
+INNER JOIN day d2 on d2.num = aci2.day
+WHERE t.state IS NOT NULL AND t.student2_id = " . $_SESSION['student_id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +71,7 @@
       </div>
       <div class="col-10 pane" style="padding: 0px !important">
         <div class="container-fluid" style="padding: 5rem 8rem 4rem 6rem!important;">
+        <form action="../controllers/trade-cancel.php" class="trade" method="post">
           <div class="container-table" style="height: 32vh">
             <div class="table-responsive" style="width: 100%; height: 100%">
               <h2 class="table-label1">Các yêu cầu trao đổi</h2>
@@ -96,60 +131,30 @@
                 </thead>
                 <!--Data-->
                 <tbody>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #FF6666">Đang đợi</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #FF6666">Đang đợi</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #FF6666">Đang đợi</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #FF6666">Đang đợi</td>
-                  </tr>
+                <?php while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td>
+                        <input class="form-check-input" type="checkbox" name="select-cancel[]" 
+                        value=<?php echo $row['trade_id'];?> />&nbsp
+                      </td>
+                      <td><?php echo $row['course2_id']; ?></td>
+                      <td style="text-align: left">
+                        <?php echo $row['course2_name']; ?></td>
+                      <td><?php echo $row['class_name2']; ?></td>
+                      <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                      <td><?php echo $row['course1_id']; ?></td>
+                      <td style="text-align: left">
+                        <?php echo $row['course1_name']; ?></td>
+                      <td><?php echo $row['class_name1']; ?></td>
+                      <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                      <td style="color: #FF6666">Đang đợi</td>;
+                    </tr>
+                    <?php } ?>
                 </tbody>
               </table>
             </div>
           </div>
 
-          <form action="" class="cancel" method="post">
             <button type="submit" class="btn-cancel">Huỷ ĐK</button>
           </form>
           <div class="container-table" style="height: 32vh; margin-top: 9rem">
@@ -211,54 +216,25 @@
                 </thead>
                 <!--Data-->
                 <tbody>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #14AE5C">Hoàn thành</td>
-                    <td></td> <!-- blank -->
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #14AE5C">Hoàn thành</td>
-                    <td></td> <!-- blank -->
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #14AE5C">Hoàn thành</td>
-                    <td></td> <!-- blank -->
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>T4 (6-9)</td>
-                    <td>CSC13001</td>
-                    <td>Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>T2 (1-4)</td>
-                    <td style="color: #14AE5C">Hoàn thành</td>
-                    <td></td> <!-- blank -->
-                  </tr>
+                <?php
+                    $query = $conn->query($sql2);
+                    $query->setFetchMode(PDO::FETCH_ASSOC);
+
+                    while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td><?php echo $row['course2_id']; ?></td>
+                      <td style="text-align: left">
+                        <?php echo $row['course2_name']; ?></td>
+                      <td><?php echo $row['class_name2']; ?></td>
+                      <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                      <td><?php echo $row['course1_id']; ?></td>
+                      <td style="text-align: left">
+                        <?php echo $row['course1_name']; ?></td>
+                      <td><?php echo $row['class_name1']; ?></td>
+                      <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                      <td style="color: #14AE5C">Hoàn thành</td>;
+                    </tr>
+                    <?php } ?>
                 </tbody>
               </table>
             </div>
