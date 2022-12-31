@@ -19,8 +19,10 @@ if (isset($_POST['cancel'])) {
 
     foreach ($all_trade_id as $trade) {
         $student_id = $_SESSION['student_id'];
+        
         $query = "DELETE FROM trade
         WHERE trade_id IN ($trade)
+        AND state IS NULL
         AND student_id IN ($student_id);";
 
         try {

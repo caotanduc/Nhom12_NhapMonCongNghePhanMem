@@ -62,9 +62,9 @@ CREATE TABLE `available_course` (
 
 INSERT INTO `available_course` (`period_id`, `course_id`, `faculty`, `school_year`) VALUES
 (1, 111, 2018, 2018),
-(2, 222, 2019, 2019),
-(3, 333, 2020, 2020),
-(4, 444, 2021, 2021);
+(1, 222, 2019, 2019),
+(1, 333, 2020, 2020),
+(1, 444, 2021, 2021);
 
 -- --------------------------------------------------------
 
@@ -90,9 +90,9 @@ CREATE TABLE `available_course_info` (
 
 INSERT INTO `available_course_info` (`period_id`, `course_id`, `class_id`, `room`, `max_student`, `start_period`, `end_period`, `start_date`, `day`) VALUES
 (1, 111, 101, 'D102', 120, 1, 4, '2018-03-02 07:30:00', 4),
-(2, 222, 202, 'E101', 100, 6, 9, '2019-03-02 12:30:00', 5),
-(3, 333, 303, 'F202', 80, 1, 4, '2020-03-02 07:30:00', 6),
-(4, 444, 404, 'G303', 60, 6, 9, '2021-03-02 12:30:00', 7);
+(1, 222, 202, 'E101', 100, 6, 9, '2019-03-02 12:30:00', 5),
+(1, 333, 303, 'F202', 80, 1, 4, '2020-03-02 07:30:00', 6),
+(1, 444, 404, 'G303', 60, 6, 9, '2021-03-02 12:30:00', 7);
 
 -- --------------------------------------------------------
 
@@ -183,9 +183,9 @@ CREATE TABLE `enrollment` (
 
 INSERT INTO `enrollment` (`period_id`, `course_id`, `student_id`, `mark`, `class_id`) VALUES
 (1, 111, 1, 0, 101),
-(2, 222, 2, 0, 202),
-(3, 333, 3, 0, 303),
-(4, 444, 4, 0, 404);
+(1, 222, 2, 0, 202),
+(1, 333, 3, 0, 303),
+(1, 444, 4, 0, 404);
 
 -- --------------------------------------------------------
 
@@ -347,9 +347,9 @@ CREATE TABLE `trade` (
 --
 INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`,`class_id`, `student_id`, `target_course_id`,`target_class_id`) VALUES
 (1, 1, 111, 101, 1, 222, 202),
-(2, 2, 222, 202, 2, 333, 303),
-(3, 3, 333, 303, 3, 111, 101),
-(4, 4, 444, 404, 4, 222, 202);
+(2, 1, 222, 202, 2, 333, 303),
+(3, 1, 333, 303, 3, 111, 101),
+(4, 1, 444, 404, 4, 222, 202);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -572,7 +572,10 @@ ALTER TABLE `student`
 -- Các ràng buộc cho bảng `trade`
 --
 ALTER TABLE `trade`
-  ADD CONSTRAINT `fk_trade_course` FOREIGN KEY (`target_course_id`) REFERENCES `course` (`ID`),
-  ADD CONSTRAINT `fk_trade_enrollment` FOREIGN KEY (`period_id`,`course_id`,`student_id`) REFERENCES `enrollment` (`period_id`, `course_id`, `student_id`),
+  ADD CONSTRAINT `fk_trade_class` FOREIGN KEY (`class_id`) REFERENCES `class` (`ID`),
+  ADD CONSTRAINT `fk_trade_course` FOREIGN KEY (`course_id`) REFERENCES `course` (`ID`),
+  ADD CONSTRAINT `fk_trade_student` FOREIGN KEY (`student_id`) REFERENCES `student` (`ID`),
+  ADD CONSTRAINT `fk_trade_class2` FOREIGN KEY (`target_class_id`) REFERENCES `class` (`ID`),
+  ADD CONSTRAINT `fk_trade_course2` FOREIGN KEY (`target_course_id`) REFERENCES `course` (`ID`),
   ADD CONSTRAINT `fk_trade_student2` FOREIGN KEY (`student2_id`) REFERENCES `student` (`ID`);
 COMMIT;
