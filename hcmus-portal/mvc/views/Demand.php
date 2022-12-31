@@ -18,7 +18,7 @@ FROM available_course_info aci INNER JOIN course co ON aci.course_id  = co.ID
 INNER JOIN class cl ON aci.class_id = cl.ID
 INNER JOIN available_course ac ON aci.period_id = ac.period_id AND aci.course_id = ac.course_id
 INNER JOIN day d ON d.num = aci.day
-WHERE aci.period_id NOT IN (SELECT en.period_id FROM enrollment en WHERE en.student_id = '" . $_SESSION['student_id'] . "')";
+WHERE aci.class_id NOT IN (SELECT en.class_id FROM enrollment en WHERE en.student_id = '" . $_SESSION['student_id'] . "')";
 ?>
 
 

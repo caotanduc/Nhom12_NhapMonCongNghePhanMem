@@ -182,10 +182,10 @@ CREATE TABLE `enrollment` (
 --
 
 INSERT INTO `enrollment` (`period_id`, `course_id`, `student_id`, `mark`, `class_id`) VALUES
-(1, 111, 1, 9, 101),
-(2, 222, 2, 8.5, 202),
-(3, 333, 3, 8, 303),
-(4, 444, 4, 7.5, 404);
+(1, 111, 1, 0, 101),
+(2, 222, 2, 0, 202),
+(3, 333, 3, 0, 303),
+(4, 444, 4, 0, 404);
 
 -- --------------------------------------------------------
 
@@ -334,8 +334,10 @@ CREATE TABLE `trade` (
   `trade_ID` int(11) NOT NULL,
   `period_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `target_course_id` int(11) NOT NULL,
+  `target_class_id` int(11) NOT NULL,
   `student2_id` int(11) DEFAULT NULL,
   `state` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -343,11 +345,11 @@ CREATE TABLE `trade` (
 --
 -- Đang đổ dữ liệu cho bảng `trade`
 --
-INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`, `student_id`, `target_course_id`) VALUES
-(1, 1, 111, 1, 222),
-(2, 2, 222, 2, 333),
-(3, 3, 333, 3, 111),
-(4, 4, 444, 4, 222);
+INSERT INTO `trade` (`trade_ID`, `period_id`, `course_id`,`class_id`, `student_id`, `target_course_id`,`target_class_id`) VALUES
+(1, 1, 111, 101, 1, 222, 202),
+(2, 2, 222, 202, 2, 333, 303),
+(3, 3, 333, 303, 3, 111, 101),
+(4, 4, 444, 404, 4, 222, 202);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -456,8 +458,9 @@ ALTER TABLE `student`
 --
 ALTER TABLE `trade`
   ADD PRIMARY KEY (`trade_ID`),
-  ADD KEY `fk_trade_enrollment_idx` (`period_id`,`course_id`,`student_id`),
+  ADD KEY `fk_trade_enrollment_idx` (`period_id`,`course_id`,`student_id`,`class_id`),
   ADD KEY `fk_trade_course_idx` (`target_course_id`),
+  ADD KEY `fk_trade_target_class_idx` (`target_class_id`),
   ADD KEY `fk_trade_student2_idx` (`student2_id`);
 
 --
