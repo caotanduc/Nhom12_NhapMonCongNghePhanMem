@@ -22,16 +22,17 @@ where e.period_id = 1 and e.student_id = " . $_SESSION['student_id'] . " order b
 
 function visualize_schedule($rowdata, $day) {
   $n = count($rowdata);
+  $cc = 1;
   for ($i = 0; $i < $n; $i++) {
     if ($rowdata[$i]['day'] == $day) {
       echo '
         <div
-          class="session session-'. ($day - 1) * 2 - 1 . ' track-'. $day - 1 .'"
+          class="session session-'. ($day - 2) * 2 + $cc++ . ' track-'. $day - 1 .'"
           style="grid-column: track-' . $day - 1 . '; grid-row: time-'. sprintf("%02d", $rowdata[$i]["sh"]) .''. sprintf("%02d", $rowdata[$i]["sm"]). ' / time-'.sprintf("%02d", $rowdata[$i]["eh"]).''.sprintf("%02d", $rowdata[$i]["em"]).'
           "
         >
         <h3 class="session-title">'. $rowdata[$i]["name"] . '</h3>
-        <span class="session-time">Thứ '. $rowdata[$i]["day"] .': ' .$rowdata[$i]["sh"] .':' . $rowdata[$i]["sm"] .' - '. $rowdata[$i]["eh"] .':' . $rowdata[$i]["em"] .'</span>
+        <span class="session-time">Thứ '. $rowdata[$i]["day"] .': ' .sprintf("%02d", $rowdata[$i]["sh"]) .':' . sprintf("%02d", $rowdata[$i]["sm"]) .' - '. sprintf("%02d", $rowdata[$i]["eh"]) .':' . sprintf("%02d", $rowdata[$i]["em"]) .'</span>
         <span class="session-room">Phòng '. $rowdata[$i]["room"] .' </span>
       </div>
       ';
