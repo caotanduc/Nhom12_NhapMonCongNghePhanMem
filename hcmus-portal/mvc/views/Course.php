@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT aci.course_id, c.name, 
+cl.name as class_name, c.credits, aci.max_student, 
+count(distinct en.student_id) as registered, ac.school_year, 
+d.name as day_name, aci.start_period, aci.end_period, aci.room, aci.period_id, aci.class_id
+from available_course_info aci inner join course c on aci.course_id  = c.ID
+inner join class cl on aci.class_id = cl.ID
+left join enrollment en on aci.period_id = en.period_id and aci.course_id = en.course_id and aci.class_id = en.class_id 
+inner join available_course ac on aci.period_id = ac.period_id and aci.course_id = ac.course_id
+inner join day d on d.num = aci.day
+group by aci.period_id, aci.course_id, aci.class_id";
+
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,253 +140,21 @@
             </thead>
             <!-- Data -->
             <tbody>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CSC13002</td>
-                <td style="text-align: left; padding-left: 1rem !important">Nhập môn công nghệ phần mềm</td>
-                <td>20_3</td>
-                <td>4</td>
-                <td>120</td>
-                <td>120</td>
-                <td>2020</td>
-                <td>T4(6-9)</td>
-                <td></td>
-                <td>LT-G202</td>
-                <td></td>
-              </tr>
+              <?php while ($row = $query->fetch()) { ?>
+                <tr>
+                  <td><?php echo $row['course_id'] ;?></td>
+                  <td style="text-align: left; padding-left: 1rem !important"><?php echo $row['name'] ;?></td>
+                  <td><?php echo $row['class_name'] ;?></td>
+                  <td><?php echo $row['credits'] ;?></td>
+                  <td><?php echo $row['max_student'] ;?></td>
+                  <td><?php echo $row['registered'] ;?></td>
+                  <td><?php echo $row['school_year'] ;?></td>
+                  <td><?php echo $row['day_name'] . ' (' . $row['start_period'] . ' - ' . $row['end_period'] . ')'; ?>
+                  <td></td>
+                  <td><?php echo $row['room']; ?></td>
+                  <td></td>
+                </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>

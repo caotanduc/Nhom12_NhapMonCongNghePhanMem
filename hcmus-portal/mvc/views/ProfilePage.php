@@ -1,3 +1,17 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "select s.fullname, s.school_year, s.email, s.address, s.date_of_birth, f.name as f_name, c.name as cl_name
+from student s inner join faculty f on s.faculty = f.ID
+inner join class c on s.class = c.ID
+where s.ID = " . $_SESSION['student_id'];
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+
+$row = $query->fetch();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,31 +42,29 @@
         <div class="col-3 bg-primary">
           <img src="../../public/img/avatar_Profile.png" class="avatar"/>  
 
-          <h2 class="text-center MSSV">MSSV</h2>
-          <h3 class="text-center StName">Student Name</h3>
+          <h2 class="text-center MSSV"><?php echo $_SESSION['student_id']; ?></h2>
+          <h3 class="text-center StName"><?php echo $row['fullname'];?></h3>
 
           <hr class="split-line" />
           <!-- Information in sidebar-->
           <div class="container info-container">
             <span class="info-title">Ngày sinh: </span>
-            <span class="info">dd/mm/yy</span>
+            <span class="info"><?php echo $row['date_of_birth'];?></span>
             <br /><br />
-            <span class="info-title">Nơi sinh: </span>
-            <span class="info">Ho Chi Minh City</span>
+            <span class="info-title">Địa chỉ: </span>
+            <span class="info"><?php echo $row['address'] ;?></span>
             <br /><br />
-            <span class="info-title">Bậc Đào Tạo: </span>
-            <span class="info">Cử nhân</span><br /><br />
-            <span class="info-title">Loại hình Đào Tạo: </span>
-            <span class="info">Chính Quy</span>
+            <span class="info-title">Email: </span>
+            <span class="info"><?php echo $row['email'] ;?></span>
             <br /><br />
-            <span class="info-title">Ngành: </span>
-            <span class="info">Công nghệ thông tin</span>
+            <span class="info-title">Khoa: </span>
+            <span class="info"><?php echo $row['f_name'] ;?></span>
             <br /><br />
-            <span class="info-title">Chuyên ngành: </span>
-            <span class="info">KTPM</span>
+            <span class="info-title">Lớp: </span>
+            <span class="info"><?php echo $row['cl_name'] ;?></span>
             <br /><br />
-            <span class="info-title">Tình trạng: </span>
-            <span class="info">Đang học</span>
+            <span class="info-title">Khóa: </span>
+            <span class="info"><?php echo $row['school_year'] ;?></span>
             <br /><br />
           </div>
         </div>
