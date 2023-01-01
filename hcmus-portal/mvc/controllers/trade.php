@@ -15,53 +15,59 @@ if (isset($_POST['trade'])) {
     if (!$trade_id) {
         $_SESSION['status'] = "Chưa có mục nào được chọn";
         header("Location: ../views/Exchange.php");
-    } else {
+    } 
+    else {
         $student2_id = $_SESSION['student_id'];
-
-        $query = "SELECT 1 FROM trade t, enrollment e
-            WHERE t.trade_id IN ($trade_id) 
-            AND t.period_id = e.period_id
-            AND t.target_course_id = e.course_id
-            AND t.target_class_id = e.class_id
-            AND $student2_id = e.student_id"; # student 2 have registed this course
-
-        $result = $sqli->query($query);
-
+        $query = "SELECT 1 FROM trade t 
+            INNER JOIN enrollment en 
+            ON t.period_id = en.period_id
+            AND t.target_course_id = en.course_id
+            AND t.target_class_id = en.class_id
+            WHERE t.trade_id = $trade_id
+            AND  en.student_id = $student2_id # student 2 have registed this course ?
+            AND t.student_id != $student2_id"; # student 1 != student 2
+        $result = mysqli_query($sqli, $query);
         if (mysqli_num_rows($result) == 0) {
-            $_SESSION['status'] = "Bạn chưa đăng ký môn học yêu cầu!";
-        } else {
-            $query = "UPDATE enrollment e
-                    SET e.student_id = (
-                    SELECT t.student2_id
-                        FROM trade t 
-                        WHERE t.trade_id IN ($trade_id) 
-                        AND t.period_id = e.period_id
-                        AND t.course_id = e.course_id
-                        AND t.class_id = e.class_id);
-                        UPDATE enrollment e
-                    SET e.student_id = (
-                    SELECT t.student_id
-                        FROM trade t 
-                        WHERE t.trade_id IN ($trade_id) 
-                        AND t.period_id = e.period_id
-                        AND t.target_course_id = e.course_id
-                        AND t.target_class_id = e.class_id);
-                    UPDATE trade t
-                    SET t.student2_id = $student2_id
-                    WHERE t.trade_id IN ($trade_id);
-                    UPDATE trade t
-                    SET t.state = 1
-                    WHERE t.trade_id IN ($trade_id)";
+            $_SESSION['status'] = "Không đạt điều kiện trao đổi!";
+            header("Location: ../views/Exchange.php");
+        }
+        else {
+            $student2_id = $_SESSION['student_id'];
+
+            $del1 = "DELETE en1 FROM enrollment en1 
+            INNER JOIN trade t ON en1.period_id = t.period_id AND en1.course_id = t.course_id AND en1.class_id = t.class_id AND en1.student_id = t.student_id
+            WHERE t.trade_id = $trade_id";
+
+            $del2 = "DELETE en2 FROM enrollment en2
+            INNER JOIN trade t ON en2.period_id = t.period_id AND en2.course_id = t.target_course_id AND en2.class_id = t.target_class_id AND en2.student_id = $student2_id
+            WHERE t.trade_id = $trade_id";
+
+            $ins1 = "INSERT INTO enrollment (period_id, course_id, student_id, class_id) 
+            SELECT t.period_id, t.target_course_id, t.student_id, t.target_class_id
+            FROM trade t
+            WHERE t.trade_id = $trade_id";
+
+            $ins2 = "INSERT INTO enrollment (period_id, course_id, student_id, class_id) 
+            SELECT t.period_id, t.course_id, $student2_id, t.class_id
+            FROM trade t
+            WHERE t.trade_id = $trade_id";
+
+            $update_trade = "UPDATE trade t
+            SET t.student2_id = $student2_id, t.state = 1
+            WHERE t.trade_id = $trade_id";
 
             try {
-                $sqli->query($query) === TRUE;
+                if ($sqli->query($del1) === TRUE 
+                && $sqli->query($del2) === TRUE
+                && $sqli->query($ins1) === TRUE
+                && $sqli->query($ins2) === TRUE
+                && $sqli->query($update_trade) === TRUE) {
                 $_SESSION['status'] = "Trao đổi thành công!";
                 header("Location: ../views/Exchange.php");
-            } catch (Exception $e) {
-                if ($e->getCode() == 1451) {
-                    $_SESSION['status'] = "Không thể thực hiện trao đổi!";
-                    header("Location: ../views/Exchange.php");
                 }
+            } catch (Exception $e) {
+                $_SESSION['status'] = "Lỗi '".$e->getMessage()."': Không thể thực hiện trao đổi!";
+                header("Location: ../views/Exchange.php");
             }
         }
     }

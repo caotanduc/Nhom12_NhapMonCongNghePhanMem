@@ -129,18 +129,18 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
                 while ($row = $query->fetch()) { ?>
                   <tr>
                     <td><input class="form-check-input" type="radio" name="select-demand" value="<?php echo $row['trade_id']; ?>"></td>
-                    <td><?php echo $row['course2_id']; ?></td>
-                    <td style="text-align: left">
-                      <?php echo $row['course2_name']; ?></td>
-                    <td><?php echo $row['class_name2']; ?></td>
-                    <td><?php echo $row['course2_cre']; ?></td>
-                    <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
                     <td><?php echo $row['course1_id']; ?></td>
                     <td style="text-align: left">
                       <?php echo $row['course1_name']; ?></td>
                     <td><?php echo $row['class_name1']; ?></td>
                     <td><?php echo $row['course1_cre']; ?></td>
                     <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                    <td><?php echo $row['course2_id']; ?></td>
+                    <td style="text-align: left">
+                      <?php echo $row['course2_name']; ?></td>
+                    <td><?php echo $row['class_name2']; ?></td>
+                    <td><?php echo $row['course2_cre']; ?></td>
+                    <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
                   </tr>
                 <?php } ?>
               </tbody>

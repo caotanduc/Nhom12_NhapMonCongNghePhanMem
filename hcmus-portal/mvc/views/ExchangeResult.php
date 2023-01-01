@@ -20,7 +20,7 @@ WHERE t.state IS NULL AND t.student_id = " . $student_id;
 $query = $conn->query($sql);
 $query->setFetchMode(PDO::FETCH_ASSOC);
 
-$sql2 = $sql = "SELECT t.trade_id, co1.ID AS course1_id, co1.name AS course1_name, cl1.name AS class_name1, co1.credits AS course1_cre, d1.name AS day_name1, aci1.start_period AS course1_start, aci1.end_period AS course1_end,
+$sql2 = $sql = "SELECT t.trade_id, t.student_id, t.student2_id, co1.ID AS course1_id, co1.name AS course1_name, cl1.name AS class_name1, co1.credits AS course1_cre, d1.name AS day_name1, aci1.start_period AS course1_start, aci1.end_period AS course1_end,
 co2.ID AS course2_id, co2.name AS course2_name, cl2.name AS class_name2, co2.credits AS course2_cre, d2.name AS day_name2, aci2.start_period AS course2_start, aci2.end_period AS course2_end
 FROM trade t 
 INNER JOIN course co1 ON t.course_id = co1.ID
@@ -95,7 +95,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                         </div>
                       </th>
-                      <th style="width: 10%">
+                      <th style="width: 9%">
                         <div style="display:flex; align-items:center; justify-content: center">
                           <div style="margin-left: auto">Lịch học</div>
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -106,7 +106,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                           <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                         </div>
-                      <th style="width: 10%">
+                      <th style="width: 12%">
                         <div style="display:flex; align-items:center; justify-content: center">
                           <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -118,7 +118,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                         </div>
                       </th>
-                      <th style="width: 10%">
+                      <th style="width: 9%">
                         <div style="display:flex; align-items:center; justify-content: center">
                           <div style="margin-left: auto">Lịch học</div>
                           <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -137,17 +137,16 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                     <?php while ($row = $query->fetch()) { ?>
                       <tr>
                         <td><input class="form-check-input" type="checkbox" name="select-cancel[]" value=<?php echo $row['trade_id']; ?> />&nbsp</td>
-
-                        <td><?php echo $row['course2_id']; ?></td>
-                        <td style="text-align: left">
-                          <?php echo $row['course2_name']; ?></td>
-                        <td><?php echo $row['class_name2']; ?></td>
-                        <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
                         <td><?php echo $row['course1_id']; ?></td>
                         <td style="text-align: left">
                           <?php echo $row['course1_name']; ?></td>
-                        <td><?php echo $row['class_name1']; ?></td>
-                        <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                          <td><?php echo $row['class_name1']; ?></td>
+                          <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                          <td><?php echo $row['course2_id']; ?></td>
+                          <td style="text-align: left">
+                            <?php echo $row['course2_name']; ?></td>
+                          <td><?php echo $row['class_name2']; ?></td>
+                          <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
                         <td style="color: #FF6666">Đang đợi</td>;
                       </tr>
                     <?php } ?>
@@ -184,7 +183,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
                     </th>
-                    <th style="width: 10%">
+                    <th style="width: 9%">
                       <div style="display:flex; align-items:center; justify-content: center">
                         <div style="margin-left: auto">Lịch học</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -195,7 +194,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                         <div style="margin-left: auto">Mã MH<br>Yêu Cầu</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
-                    <th style="width: 10%">
+                    <th style="width: 12%">
                       <div style="display:flex; align-items:center; justify-content: center">
                         <div style="margin-left: auto">Tên MH<br>Yêu Cầu</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -207,7 +206,7 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
                     </th>
-                    <th style="width: 10%">
+                    <th style="width: 9%">
                       <div style="display:flex; align-items:center; justify-content: center">
                         <div style="margin-left: auto">Lịch học</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
@@ -230,17 +229,31 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
 
                   while ($row = $query->fetch()) { ?>
                     <tr>
-                      <td><?php echo $row['course2_id']; ?></td>
-                      <td style="text-align: left">
-                        <?php echo $row['course2_name']; ?></td>
-                      <td><?php echo $row['class_name2']; ?></td>
-                      <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
-                      <td><?php echo $row['course1_id']; ?></td>
-                      <td style="text-align: left">
-                        <?php echo $row['course1_name']; ?></td>
-                      <td><?php echo $row['class_name1']; ?></td>
-                      <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                      <?php if ($row['student_id'] == $_SESSION['student_id']) { ?>
+                            <td><?php echo $row['course2_id']; ?></td>
+                            <td style="text-align: left">
+                              <?php echo $row['course2_name']; ?></td>
+                            <td><?php echo $row['class_name2']; ?></td>
+                            <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                            <td><?php echo $row['course1_id']; ?></td>
+                            <td style="text-align: left">
+                              <?php echo $row['course1_name']; ?></td>
+                            <td><?php echo $row['class_name1']; ?></td>
+                            <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                      <?php } else { ?>
+                            <td><?php echo $row['course1_id']; ?></td>
+                            <td style="text-align: left">
+                              <?php echo $row['course1_name']; ?></td>
+                            <td><?php echo $row['class_name1']; ?></td>
+                            <td><?php echo $row['day_name1'] . ' (' . $row['course1_start'] . ' - ' . $row['course1_end'] . ')'; ?></td>
+                            <td><?php echo $row['course2_id']; ?></td>
+                            <td style="text-align: left">
+                              <?php echo $row['course2_name']; ?></td>
+                            <td><?php echo $row['class_name2']; ?></td>
+                            <td><?php echo $row['day_name2'] . ' (' . $row['course2_start'] . ' - ' . $row['course2_end'] . ')'; ?></td>
+                      <?php } ?>
                       <td style="color: #14AE5C">Hoàn thành</td>;
+                      <td></td>
                     </tr>
                   <?php } ?>
                 </tbody>
