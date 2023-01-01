@@ -1,3 +1,18 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT co.ID, co.name, c.name as class_name, co.credits, aci.room, en.period_id, en.class_id, stu.fullname
+from enrollment en inner join class c on en.class_id = c.ID
+inner join course co on en.course_id = co.ID
+inner join available_course_info aci on en.period_id = aci.period_id and en.course_id = aci.course_id and en.class_id = aci.class_id
+inner join student stu on stu.id = en.student_id
+where en.student_id = " . $_SESSION['student_id'];
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,96 +119,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align:left;">Nhập môn công nghệ phần mềm</td>
-                    <td>20_3</td>
-                    <td>ĐKHP</td>
-                    <td>13/03/2022<br>09:45:48 AM</td>
-                    <td>Giáo vụ Khoa</td>
-                    <td></td>
-                  </tr>
+                  <!--Data-->
+                  <?php
+                  while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td><?php echo $row['ID']; ?></td>
+                      <td style="text-align: left;">
+                        <?php echo $row['name']; ?>
+                      </td>
+                      <td><?php echo $row['class_name']; ?></td>
+                      <td>ĐKHP</td>
+                      <td></td>
+                      <td>
+                        <?php echo $row['fullname']; ?>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <?php } ?>
                 </tbody>
               </table>
             </div>
