@@ -11,6 +11,34 @@ $query = $conn->query($sql);
 $query->setFetchMode(PDO::FETCH_ASSOC);
 
 $row = $query->fetch();
+
+
+$sql2 = "select c.name as name, aci.day, hour(sc1.start_time) sh, minute(sc1.start_time) sm, hour(sc2.end_time) eh, minute(sc2.end_time) em, aci.room
+from enrollment e inner join available_course_info aci on e.period_id = aci.period_id and e.course_id = aci.course_id and e.class_id = aci.class_id
+inner join course c on e.course_id = c.ID
+inner join schedule sc1 on aci.start_period = sc1.period
+inner join schedule sc2 on aci.end_period = sc2.period
+where e.period_id = 1 and e.student_id = " . $_SESSION['student_id'] . " order by aci.day asc";
+
+function visualize_schedule($rowdata, $day) {
+  $n = count($rowdata);
+  for ($i = 0; $i < $n; $i++) {
+    if ($rowdata[$i]['day'] == $day) {
+      echo '
+        <div
+          class="session session-'. ($day - 1) * 2 - 1 . ' track-'. $day - 1 .'"
+          style="grid-column: track-' . $day - 1 . '; grid-row: time-'. sprintf("%02d", $rowdata[$i]["sh"]) .''. sprintf("%02d", $rowdata[$i]["sm"]). ' / time-'.sprintf("%02d", $rowdata[$i]["eh"]).''.sprintf("%02d", $rowdata[$i]["em"]).'
+          "
+        >
+        <h3 class="session-title">'. $rowdata[$i]["name"] . '</h3>
+        <span class="session-time">Thứ '. $rowdata[$i]["day"] .': ' .$rowdata[$i]["sh"] .':' . $rowdata[$i]["sm"] .' - '. $rowdata[$i]["eh"] .':' . $rowdata[$i]["em"] .'</span>
+        <span class="session-room">Phòng '. $rowdata[$i]["room"] .' </span>
+      </div>
+      ';
+    }
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +97,12 @@ $row = $query->fetch();
           </div>
         </div>
 
+        <?php 
+          $query = $conn->query($sql2);
+          $query->setFetchMode(PDO::FETCH_ASSOC);
+          
+          $row = $query->fetchAll();
+          ?>
         <!--Contains the main content of the webpage-->
         <div class="col-9">
           <div class="container-schedule" style="max-height: calc(100vh-7rem);">
@@ -202,92 +236,23 @@ $row = $query->fetch();
               ></div>
               <!-- Data -->
               <!-- T2 -->
-              <div
-                class="session session-1 track-1"
-                style="grid-column: track-1; grid-row: time-0730 / time-1110"
-              >
-                <h3 class="session-title">Lập trình Windows</h3>
-                <span class="session-time">Thứ 2: 7:30 - 11:10</span>
-                <span class="session-room">D106</span>
-              </div>
-  
-              <div
-                class="session session-2 track-1"
-                style="grid-column: track-1; grid-row: time-1230 / time-1320"
-              ></div>
+              <?php visualize_schedule($row, 2);?>
   
               <!-- T3 -->
-              <div
-                class="session session-3 track-2"
-                style="grid-column: track-2; grid-row: time-0730 / time-1110"
-              >
-                <h3 class="session-title">Cơ sở trí tuệ nhân tạo</h3>
-                <span class="session-time">Thứ 3: 7:30 - 11:10</span>
-                <span class="session-room">G202</span>
-              </div>
-  
-              <div
-                class="session session-4 track-2"
-                style="grid-column: track-2; grid-row: time-1230 / time-1610"
-              >
-                <h3 class="session-title">
-                  Phát triển phần mềm cho thiết bị di động
-                </h3>
-                <span class="session-time">Thứ 3: 12:30 - 16:00</span>
-                <span class="session-room">F301</span>
-              </div>
+              <?php visualize_schedule($row, 3);?>
   
               <!-- T4 -->
-              <div
-                class="session session-5 track-3"
-                style="grid-column: track-3; grid-row: time-0730 / time-1110"
-              >
-                <h3 class="session-title">Hệ Điều Hành</h3>
-                <span class="session-time">Thứ 4: 7:30 - 11:10</span>
-                <span class="session-room">E202</span>
-              </div>
-  
-              <div
-                class="session session-6 track-3"
-                style="grid-column: track-3; grid-row: time-1230 / time-1610"
-              >
-                <h3 class="session-title">Nhập môn công nghệ phần mềm</h3>
-                <span class="session-time">Thứ 4: 12:30 - 16:00</span>
-                <span class="session-room">G202</span>
-              </div>
-  
+              <?php visualize_schedule($row, 4);?>
+
               <!-- T5 -->
-              <div
-                class="session session-7 track-4"
-                style="grid-column: track-4; grid-row: time-0730 / time-0830"
-              ></div>
-  
-              <div
-                class="session session-8 track-4"
-                style="grid-column: track-4; grid-row: time-1230 / time-1320"
-              ></div>
-  
+              <?php visualize_schedule($row, 5);?>
+
               <!-- T6 -->
-              <div
-                class="session session-9 track-5"
-                style="grid-column: track-5; grid-row: time-0730 / time-0830"
-              ></div>
-  
-              <div
-                class="session session-10 track-5"
-                style="grid-column: track-5; grid-row: time-1230 / time-1320"
-              ></div>
+              <?php visualize_schedule($row, 6);?>
   
               <!-- T7 -->
-              <div
-                class="session session-11 track-6"
-                style="grid-column: track-6; grid-row: time-0730 / time-0830"
-              ></div>
-  
-              <div
-                class="session session-12 track-6"
-                style="grid-column: track-6; grid-row: time-1230 / time-1320"
-              ></div>
+              <?php visualize_schedule($row, 7);?>
+
             </div>
           </div>
         </div>
