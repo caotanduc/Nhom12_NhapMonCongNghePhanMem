@@ -2,9 +2,9 @@
 session_start();
 include "../config/db_connect.php";
 
-$sql = "SELECT s.fullname, s.school_year, s.email, s.address, s.date_of_birth, f.name as f_name, c.name as cl_name
-FROM student s inner join faculty f on s.faculty = f.ID
-inner join class c on s.class = c.ID
+$sql = "SELECT s.fullname, s.school_year, s.email, s.address, s.date_of_birth, f.name AS f_name, c.name AS cl_name
+FROM student s INNER JOIN faculty f ON s.faculty = f.ID
+INNER JOIN class c ON s.class = c.ID
 where s.ID = " . $_SESSION['student_id'];
 
 $query = $conn->query($sql);
@@ -14,11 +14,11 @@ $row = $query->fetch();
 
 
 $sql2 = "SELECT c.name AS name, aci.day, aci.start_period, aci.end_period ,hour(sc1.start_time) sh, minute(sc1.start_time) sm, hour(sc2.end_time) eh, minute(sc2.end_time) em, aci.room
-FROM enrollment e inner join available_course_info aci on e.period_id = aci.period_id and e.course_id = aci.course_id and e.class_id = aci.class_id
-inner join course c on e.course_id = c.ID
-inner join schedule sc1 on aci.start_period = sc1.period
-inner join schedule sc2 on aci.end_period = sc2.period
-where e.period_id = 1 and e.student_id = " . $_SESSION['student_id'] . " order by aci.day asc";
+FROM enrollment e INNER JOIN available_course_info aci ON e.period_id = aci.period_id AND e.course_id = aci.course_id AND e.class_id = aci.class_id
+INNER JOIN course c ON e.course_id = c.ID
+INNER JOIN schedule sc1 ON aci.start_period = sc1.period
+INNER JOIN schedule sc2 ON aci.end_period = sc2.period
+where e.period_id = 1 AND e.student_id = " . $_SESSION['student_id'] . " order by aci.day asc";
 
 function visualize_schedule($rowdata, $day) {
   $n = count($rowdata);
@@ -27,8 +27,8 @@ function visualize_schedule($rowdata, $day) {
     if ($rowdata[$i]['day'] == $day) {
       echo '
         <div
-          class="session session-'. ($day - 2) * 2 + $cc++ . ' track-'. $day - 1 .'"
-          style="grid-column: track-' . $day - 1 . '; grid-row: time-'. $rowdata[$i]["start_period"] .' / time-'.$rowdata[$i]["end_period"]+1 .'
+          class="session session-'.(string)(($day - 2) * 2 + $cc++ ). ' track-'. (string)($day - 1 ).'"
+          style="grid-column: track-' . (string)($day - 1 ). '; grid-row: time-'. (string)($rowdata[$i]["start_period"]) .' / time-'.(string)($rowdata[$i]["end_period"] + 1 ).'
           ">
         <h3 class="session-title">'. $rowdata[$i]["name"] . '</h3>
         <span class="session-time">Thứ '. $rowdata[$i]["day"] .': ' .sprintf("%02d", $rowdata[$i]["sh"]) .':' . sprintf("%02d", $rowdata[$i]["sm"]) .' - '. sprintf("%02d", $rowdata[$i]["eh"]) .':' . sprintf("%02d", $rowdata[$i]["em"]) .'</span>
