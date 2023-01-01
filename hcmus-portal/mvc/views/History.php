@@ -106,16 +106,11 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
                     </th>
                     <th style="width: 11%">
                       <div style="display:flex; align-items:center; justify-content: center">
-                        <div style="margin-left: auto">Thời gian</div>
-                        <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
-                      </div>
-                    <th style="width: 11%">
-                      <div style="display:flex; align-items:center; justify-content: center">
                         <div style="margin-left: auto">Thực hiện</div>
                         <div style="margin-left: auto"><i class="fa fa-chevron-down"></i></div>
                       </div>
                     </th>
-                    <th style="width: 24%"></th>
+                    <th style="width: 35%"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -129,7 +124,6 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
                       </td>
                       <td><?php echo $row['class_name']; ?></td>
                       <td>ĐKHP</td>
-                      <td></td>
                       <td>
                         <?php echo $row['fullname']; ?>
                       </td>
