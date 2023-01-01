@@ -1,3 +1,17 @@
+<?php
+session_start();
+include "../config/db_connect.php";
+
+$sql = "SELECT co.ID, co.name, c.name as class_name, co.credits, aci.room, en.period_id, en.class_id
+from enrollment en inner join class c on en.class_id = c.ID
+inner join course co on en.course_id = co.ID
+inner join available_course_info aci on en.period_id = aci.period_id and en.course_id = aci.course_id and en.class_id = aci.class_id
+where en.student_id = " . $_SESSION['student_id'];
+
+$query = $conn->query($sql);
+$query->setFetchMode(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,61 +125,24 @@
 
                 <tbody>
                   <!--Data-->
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Nhập môn công nghệ phần mềm
-                    </td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Nhập môn công nghệ phần mềm
-                    </td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Nhập môn công nghệ phần mềm
-                    </td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Nhập môn công nghệ phần mềm
-                    </td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>CSC13002</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Nhập môn công nghệ phần mềm
-                    </td>
-                    <td>20_3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td></td>
-                  </tr>
+                  <?php
+                  while ($row = $query->fetch()) { ?>
+                    <tr>
+                      <td><?php echo $row['ID']; ?></td>
+                      <td style="text-align: left;">
+                        <?php echo $row['name']; ?>
+                      </td>
+                      <td><?php echo $row['class_name']; ?></td>
+                      <td>
+                        <?php echo $row['credits']; ?>
+                      </td>
+                      <td></td>
+                      <td>
+                        <?php echo $row['room']; ?>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <?php } ?>
                 </tbody>
               </table>
             </div>
@@ -236,98 +213,6 @@
                 </thead>
                 <!--Data-->
                 <tbody>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
-                  <tr>
-                    <td>CSC13001</td>
-                    <td style="text-align: left; padding-left: 1rem !important">
-                      Lập trình Windows</td>
-                    <td>20_3</td>
-                    <td>120</td>
-                    <td>120</td>
-                    <td>2020</td>
-                    <td>T2 (1-4)</td>
-                    <td></td>
-                    <td>LT-G202</td>
-                    <td>8</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
