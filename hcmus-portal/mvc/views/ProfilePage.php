@@ -2,8 +2,8 @@
 session_start();
 include "../config/db_connect.php";
 
-$sql = "select s.fullname, s.school_year, s.email, s.address, s.date_of_birth, f.name as f_name, c.name as cl_name
-from student s inner join faculty f on s.faculty = f.ID
+$sql = "SELECT s.fullname, s.school_year, s.email, s.address, s.date_of_birth, f.name as f_name, c.name as cl_name
+FROM student s inner join faculty f on s.faculty = f.ID
 inner join class c on s.class = c.ID
 where s.ID = " . $_SESSION['student_id'];
 
@@ -13,8 +13,8 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
 $row = $query->fetch();
 
 
-$sql2 = "select c.name as name, aci.day, hour(sc1.start_time) sh, minute(sc1.start_time) sm, hour(sc2.end_time) eh, minute(sc2.end_time) em, aci.room
-from enrollment e inner join available_course_info aci on e.period_id = aci.period_id and e.course_id = aci.course_id and e.class_id = aci.class_id
+$sql2 = "SELECT c.name AS name, aci.day, aci.start_period, aci.end_period ,hour(sc1.start_time) sh, minute(sc1.start_time) sm, hour(sc2.end_time) eh, minute(sc2.end_time) em, aci.room
+FROM enrollment e inner join available_course_info aci on e.period_id = aci.period_id and e.course_id = aci.course_id and e.class_id = aci.class_id
 inner join course c on e.course_id = c.ID
 inner join schedule sc1 on aci.start_period = sc1.period
 inner join schedule sc2 on aci.end_period = sc2.period
@@ -28,9 +28,8 @@ function visualize_schedule($rowdata, $day) {
       echo '
         <div
           class="session session-'. ($day - 2) * 2 + $cc++ . ' track-'. $day - 1 .'"
-          style="grid-column: track-' . $day - 1 . '; grid-row: time-'. sprintf("%02d", $rowdata[$i]["sh"]) .''. sprintf("%02d", $rowdata[$i]["sm"]). ' / time-'.sprintf("%02d", $rowdata[$i]["eh"]).''.sprintf("%02d", $rowdata[$i]["em"]).'
-          "
-        >
+          style="grid-column: track-' . $day - 1 . '; grid-row: time-'. $rowdata[$i]["start_period"] .' / time-'.$rowdata[$i]["end_period"]+1 .'
+          ">
         <h3 class="session-title">'. $rowdata[$i]["name"] . '</h3>
         <span class="session-time">Thứ '. $rowdata[$i]["day"] .': ' .sprintf("%02d", $rowdata[$i]["sh"]) .':' . sprintf("%02d", $rowdata[$i]["sm"]) .' - '. sprintf("%02d", $rowdata[$i]["eh"]) .':' . sprintf("%02d", $rowdata[$i]["em"]) .'</span>
         <span class="session-room">Phòng '. $rowdata[$i]["room"] .' </span>
@@ -154,85 +153,85 @@ function visualize_schedule($rowdata, $day) {
               >
   
               <!-- Time title -->
-              <img src="../../public/img/Tiet1.png" alt="" class="time-slot" style="grid-row: time-0730">
-              <img src="../../public/img/Tiet2.png" alt="" class="time-slot" style="grid-row: time-0830">
-              <img src="../../public/img/Tiet3.png" alt="" class="time-slot" style="grid-row: time-0920">
-              <img src="../../public/img/Tiet4.png" alt="" class="time-slot" style="grid-row: time-1020">
-              <img src="../../public/img/Tiet5.png" alt="" class="time-slot" style="grid-row: time-1110">
-              <img src="../../public/img/Tiet6.png" alt="" class="time-slot" style="grid-row: time-1230">
-              <img src="../../public/img/Tiet7.png" alt="" class="time-slot" style="grid-row: time-1320">
-              <img src="../../public/img/Tiet8.png" alt="" class="time-slot" style="grid-row: time-1420">
-              <img src="../../public/img/Tiet9.png" alt="" class="time-slot" style="grid-row: time-1510">
-              <img src="../../public/img/Tiet10.png" alt="" class="time-slot" style="grid-row: time-1610">
+              <img src="../../public/img/Tiet1.png" alt="" class="time-slot" style="grid-row: time-1">
+              <img src="../../public/img/Tiet2.png" alt="" class="time-slot" style="grid-row: time-2">
+              <img src="../../public/img/Tiet3.png" alt="" class="time-slot" style="grid-row: time-3">
+              <img src="../../public/img/Tiet4.png" alt="" class="time-slot" style="grid-row: time-4">
+              <img src="../../public/img/Tiet5.png" alt="" class="time-slot" style="grid-row: time-5">
+              <img src="../../public/img/Tiet6.png" alt="" class="time-slot" style="grid-row: time-6">
+              <img src="../../public/img/Tiet7.png" alt="" class="time-slot" style="grid-row: time-7">
+              <img src="../../public/img/Tiet8.png" alt="" class="time-slot" style="grid-row: time-8">
+              <img src="../../public/img/Tiet9.png" alt="" class="time-slot" style="grid-row: time-9">
+              <img src="../../public/img/Tiet10.png" alt="" class="time-slot" style="grid-row: time-10">
               <!-- Dashed backgound -->
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-0730 / time-0830;
+                  grid-row: time-1 / time-2;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-0830 / time-0920;
+                  grid-row: time-2 / time-3;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-0920 / time-1020;
+                  grid-row: time-3 / time-4;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1020 / time-1110;
+                  grid-row: time-4 / time-5;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1110 / time-1230;
+                  grid-row: time-5 / time-6;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1230 / time-1320;
+                  grid-row: time-6 / time-7;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1320 / time-1420;
+                  grid-row: time-7 / time-8;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1420 / time-1510;
+                  grid-row: time-8 / time-9;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1510 / time-1610;
+                  grid-row: time-9 / time-10;
                 "
               ></div>
               <div
                 class="session track-bg"
                 style="
                   grid-column: track-1-start / track-6-end;
-                  grid-row: time-1610;
+                  grid-row: time-10;
                 "
               ></div>
               <!-- Data -->
