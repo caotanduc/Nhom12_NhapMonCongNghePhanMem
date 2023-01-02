@@ -134,9 +134,11 @@ WHERE t.state IS NOT NULL AND (t.student2_id = $student_id OR t.student_id = $st
                   </thead>
                   <!--Data-->
                   <tbody>
-                    <?php while ($row = $query->fetch()) { ?>
+                    <?php 
+                      $i = 1;
+                      while ($row = $query->fetch()) { ?>
                       <tr>
-                        <td><input class="form-check-input" type="checkbox" name="select-cancel[]" value=<?php echo $row['trade_id']; ?> />&nbsp</td>
+                        <td><input class="form-check-input" id="trade-<?php echo $i; $i += 1; ?>" type="checkbox" name="select-cancel[]" value=<?php echo $row['trade_id']; ?> />&nbsp</td>
                         <td><?php echo $row['course1_id']; ?></td>
                         <td style="text-align: left">
                           <?php echo $row['course1_name']; ?></td>

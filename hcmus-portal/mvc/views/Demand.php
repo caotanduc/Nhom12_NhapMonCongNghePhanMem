@@ -119,9 +119,10 @@ WHERE aci.class_id NOT IN (SELECT en.class_id FROM enrollment en WHERE en.studen
                   <!--Data-->
                   <tbody>
                     <?php
+                    $i = 1;
                     while ($row = $query->fetch()) { ?>
                       <tr>
-                        <td><input class="form-check-input" type="radio" name="select-send" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectSend(this)"></td>
+                        <td><input class="form-check-input" id="send-<?php echo $i; $i += 1; ?>" type="radio" name="select-send" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectSend(this)"></td>
                         <td><?php echo $row['ID']; ?></td>
                         <td style="text-align: left">
                           <?php echo $row['name']; ?></td>
@@ -202,9 +203,10 @@ WHERE aci.class_id NOT IN (SELECT en.class_id FROM enrollment en WHERE en.studen
                     <?php
                     $query = $conn->query($sql2);
                     $query->setFetchMode(PDO::FETCH_ASSOC);
+                    $i = 1;
                     while ($row = $query->fetch()) { ?>
                       <tr>
-                        <td><input class="form-check-input" type="radio" name="select-receive" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectReceive(this)"></td>
+                        <td><input class="form-check-input" id="send-<?php echo $i; $i += 1; ?>" type="radio" name="select-receive" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectReceive(this)"></td>
                         <td><?php echo $row['ID']; ?></td>
                         <td style="text-align: left;">
                           <?php echo $row['name']; ?></td>

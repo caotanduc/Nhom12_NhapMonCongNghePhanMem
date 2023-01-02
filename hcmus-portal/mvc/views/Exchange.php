@@ -126,9 +126,10 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
               <tbody>
 
                 <?php
+                $i = 1;
                 while ($row = $query->fetch()) { ?>
                   <tr>
-                    <td><input class="form-check-input" type="radio" name="select-demand" value="<?php echo $row['trade_id']; ?>"></td>
+                    <td><input class="form-check-input" id="trade-<?php echo $i; $i += 1; ?>" type="radio" name="select-demand" value="<?php echo $row['trade_id']; ?>"></td>
                     <td><?php echo $row['course1_id']; ?></td>
                     <td style="text-align: left">
                       <?php echo $row['course1_name']; ?></td>
