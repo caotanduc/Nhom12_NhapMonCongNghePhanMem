@@ -206,7 +206,7 @@ WHERE aci.class_id NOT IN (SELECT en.class_id FROM enrollment en WHERE en.studen
                     $i = 1;
                     while ($row = $query->fetch()) { ?>
                       <tr>
-                        <td><input class="form-check-input" id="send-<?php echo $i; $i += 1; ?>" type="radio" name="select-receive" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectReceive(this)"></td>
+                        <td><input class="form-check-input" id="recv-<?php echo $i; $i += 1; ?>" type="radio" name="select-receive" value="<?php echo $row['period_id'] . "," . $row['ID'] . "," . $row['class_id']; ?>" onclick="selectReceive(this)"></td>
                         <td><?php echo $row['ID']; ?></td>
                         <td style="text-align: left;">
                           <?php echo $row['name']; ?></td>
